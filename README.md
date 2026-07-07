@@ -42,6 +42,17 @@ One-time repository setup for the custom domain:
 
 The workflow takes its base URL from the Pages configuration (`actions/configure-pages`), so it works before and after the custom domain is active.
 
+## Analytics
+
+Cookieless hit counting via [GoatCounter](https://www.goatcounter.com/) — pageviews and rough geo location (country, derived from IP, not stored), no cookies, no consent banner required.
+
+One-time setup:
+
+1. Sign up at goatcounter.com and pick a site code (config assumes `obuchmann` → `obuchmann.goatcounter.com`).
+2. If the code differs, change `params.analytics.goatcounter` in `hugo.toml`. Setting it to `""` disables analytics entirely.
+
+The tracking script is only injected in production builds (`hugo.IsProduction`), so local `hugo server` previews are never counted. Data lives in the GoatCounter dashboard; it also exposes an API if the numbers should ever feed into an agent workflow. A self-hosted, MCP-native alternative (e.g. YAWA) can replace this later by swapping the snippet in `layouts/partials/head.html`.
+
 ## Structure
 
 ```

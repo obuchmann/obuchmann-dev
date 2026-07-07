@@ -8,6 +8,11 @@ enableRobotsTXT = true
 author = "Oliver Buchmann"
 description = "Notes on software engineering, agent harnesses, and loop engineering."
 
+# Cookieless hit counting via GoatCounter (https://<code>.goatcounter.com).
+# Only injected in production builds. Empty string disables it.
+[params.analytics]
+goatcounter = "obuchmann"
+
 [pagination]
 pagerSize = 20
 

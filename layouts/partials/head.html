@@ -31,3 +31,8 @@
 
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+{{ if and hugo.IsProduction site.Params.analytics.goatcounter }}
+<script data-goatcounter="https://{{ site.Params.analytics.goatcounter }}.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+{{ end }}
