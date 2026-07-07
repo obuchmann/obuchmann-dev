@@ -7,8 +7,6 @@ description: "Marketplaces solve distribution of harness knowledge — publish, 
 tags: [harness-engineering, agentic-engineering]
 ---
 
-![Two-panel comparison of the marketplace distribution model and the federation model](distribution-vs-federation-hero.svg)
-
 [Birgitta Böckeler's article on harness engineering](https://martinfowler.com/articles/harness-engineering.html) — the practice of wrapping a model in the guides, sensors, and feedback loops that make it a reliable coding agent — leaves one question deliberately open. Harness templates, she notes, could let larger organizations share common guides and sensors — but the moment a team instantiates a template, it starts drifting out of sync. The versioning and contribution problems might be *worse* than with classic service templates, because guides and sensors are not deterministic artifacts. She names the problem and moves on.
 
 The rest of the field has been busy answering adjacent questions. "How do I build a harness for one system" is well covered — [OpenAI's account of a fully agent-built codebase](https://openai.com/index/harness-engineering/), Böckeler's own piece, a growing canon of practitioner writing. "How do I technically compose, control and share harnesses" got its answer in June, when Databricks open-sourced Omnigent, a meta-harness that wraps Claude Code, Codex and custom agents behind one API. And "how do I package and ship agent skills" is maturing fast: registries, `gh skill`, provenance and pinning, marketplace directories listing thousands of entries.
@@ -34,6 +32,8 @@ Third — and this is the one Port half-admits — **mandates get routed around*
 Templates drift, Böckeler said, and nobody contributes back upstream. A registry doesn't fix that. It makes the drift easier to install.
 
 ## Distribution is not federation
+
+![Two-panel comparison of the marketplace distribution model and the federation model](distribution-vs-federation-hero.svg)
 
 Here is the category distinction the whole debate is missing.
 
