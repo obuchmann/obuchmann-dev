@@ -1,0 +1,35 @@
+baseURL = "https://obuchmann.dev/"
+languageCode = "en-us"
+title = "obuchmann.dev"
+timeZone = "Europe/Vienna"
+enableRobotsTXT = true
+
+[params]
+author = "Oliver Buchmann"
+description = "Notes on software engineering, agent harnesses, and loop engineering."
+
+[pagination]
+pagerSize = 20
+
+[taxonomies]
+tag = "tags"
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[markup.goldmark.renderer]
+unsafe = false
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+
+[[menus.main]]
+name = "Posts"
+pageRef = "/posts"
+weight = 10
+
+[[menus.main]]
+name = "RSS"
+url = "/index.xml"
+weight = 20
