@@ -38,3 +38,8 @@ weight = 10
 name = "RSS"
 url = "/index.xml"
 weight = 20
+
+[[menus.main]]
+name = "GitHub"
+url = "https://github.com/obuchmann/obuchmann-dev"
+weight = 30
