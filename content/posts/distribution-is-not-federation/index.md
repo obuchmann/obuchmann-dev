@@ -7,6 +7,8 @@ description: "Marketplaces solve distribution of harness knowledge — publish, 
 tags: [harness-engineering, agentic-engineering]
 ---
 
+![Two-panel comparison of the marketplace distribution model and the federation model](distribution-vs-federation-hero.svg)
+
 [Birgitta Böckeler's article on harness engineering](https://martinfowler.com/articles/harness-engineering.html) — the practice of wrapping a model in the guides, sensors, and feedback loops that make it a reliable coding agent — leaves one question deliberately open. Harness templates, she notes, could let larger organizations share common guides and sensors — but the moment a team instantiates a template, it starts drifting out of sync. The versioning and contribution problems might be *worse* than with classic service templates, because guides and sensors are not deterministic artifacts. She names the problem and moves on.
 
 The rest of the field has been busy answering adjacent questions. "How do I build a harness for one system" is well covered — [OpenAI's account of a fully agent-built codebase](https://openai.com/index/harness-engineering/), Böckeler's own piece, a growing canon of practitioner writing. "How do I technically compose, control and share harnesses" got its answer in June, when Databricks open-sourced Omnigent, a meta-harness that wraps Claude Code, Codex and custom agents behind one API. And "how do I package and ship agent skills" is maturing fast: registries, `gh skill`, provenance and pinning, marketplace directories listing thousands of entries.
@@ -57,11 +59,15 @@ The mental model I'm proposing is one every developer already has in their bones
 
 No central harness by mechanism. Instead, any number of exchange repos that form along affinity — shared stack, shared domain, or simply people who like trading notes. Every node keeps its own complete harness. Knowledge flows **pull-based** between nodes that trust each other. Reputation accrues to nodes whose patterns carry evidence and get adopted; the "org catalog" is not decreed, it's whichever exchange most teams happen to track — a blessed tree, emergent through trust gravity. Aggregation runs through lieutenants: maintainers at each altitude who curate what rises and what descends, the way kernel subsystem maintainers do.
 
+![The distributed harness topology: projects consolidate into team harnesses, which exchange knowledge pull-based through affinity exchanges curated by lieutenants, with the most-tracked exchange emerging as the blessed tree](dvcs-topology.svg)
+
 One objection arrives immediately, and it deserves to be met head-on: *these merges aren't mechanical.* Two conventions can contradict each other semantically; no `git merge` resolves "Result types" versus "exceptions." Correct — and that is not a defect of the analogy, it is the definition of the layer. We are working upstream of code, where humans and agents meet. The merge *is* the curation decision. And the non-mechanizability of that merge is precisely why marketplaces fail here: they can only ship things that install cleanly.
 
 Which raises the practical question: if artifacts don't transfer cleanly, what actually travels between nodes?
 
 **The decision travels, not the artifact.** The exchange medium is an ADR. The loop looks like this: a team's reflection practice — session retros, a `/reflect` command, a retro-skill-style agent — surfaces a friction and a fix. In the team forum, usually at the retrospective, that finding is distilled into an ADR that describes the *change to the harness*: what was changed (a guide, a sensor, a skill, an AGENTS snippet), why, with what evidence, and under what applicability conditions. That ADR is what gets published to the exchange.
+
+![The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR](adr-loop.svg)
 
 Any other node can then **derive its own harness diff from the ADR**. The projection happens at the receiving end, in the receiver's context, typically agent-assisted: a discovery agent finds ADRs matching your stack and topology, a local agent proposes the concrete diff against *your* harness, a human curates the result. Keep, adapt, or discard — recorded in your own ADR.
 

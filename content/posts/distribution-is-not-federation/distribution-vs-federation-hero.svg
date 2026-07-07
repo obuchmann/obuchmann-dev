@@ -1,0 +1,114 @@
+<svg width="680" viewBox="0 0 680 405" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Distribution is not federation</title>
+<desc>Two-panel comparison. Left: a flat marketplace where a registry ranked by popularity pushes artifacts one way down to teams that drift; there is no vertical axis. Right: a federation where teams exchange ADRs both ways through an exchange, and beliefs are promoted up to org level with evidence and projected back down.</desc>
+<style>
+text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.th{font-size:14px;font-weight:600}
+.ts{font-size:12px;font-weight:400}
+.tp{fill:#2C2C2A}
+.tm{fill:#6E6D66}
+.panel{fill:none;stroke:#C5C3BA;stroke-width:1;stroke-dasharray:6 4}
+.arr{fill:none;stroke:#5F5E5A;stroke-width:1.5}
+.mk{fill:none;stroke:#5F5E5A;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.coral rect{fill:#FAECE7;stroke:#993C1D;stroke-width:1}
+.coral .th{fill:#712B13}
+.coral .ts{fill:#993C1D}
+.teal rect{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1}
+.teal .th{fill:#085041}
+.teal .ts{fill:#0F6E56}
+.gray rect{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1}
+.gray .th{fill:#444441}
+.gray .ts{fill:#5F5E5A}
+@media (prefers-color-scheme:dark){
+.tp{fill:#E8E6DD}
+.tm{fill:#A8A69D}
+.panel{stroke:#55544F}
+.arr{stroke:#B4B2A9}
+.mk{stroke:#B4B2A9}
+.coral rect{fill:#712B13;stroke:#F0997B}
+.coral .th{fill:#F5C4B3}
+.coral .ts{fill:#F0997B}
+.teal rect{fill:#085041;stroke:#5DCAA5}
+.teal .th{fill:#9FE1CB}
+.teal .ts{fill:#5DCAA5}
+.gray rect{fill:#444441;stroke:#B4B2A9}
+.gray .th{fill:#D3D1C7}
+.gray .ts{fill:#B4B2A9}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk" d="M2 1L8 5L2 9"/></marker></defs>
+
+<rect class="panel" x="20" y="30" width="310" height="352" rx="12"/>
+<text class="th tp" x="175" y="54" text-anchor="middle">Distribution</text>
+<text class="ts tm" x="175" y="72" text-anchor="middle">marketplace model</text>
+
+<g class="coral">
+  <rect x="85" y="90" width="180" height="56" rx="8"/>
+  <text class="th" x="175" y="108" text-anchor="middle" dominant-baseline="central">Registry</text>
+  <text class="ts" x="175" y="126" text-anchor="middle" dominant-baseline="central">ranked by popularity</text>
+</g>
+
+<line class="arr" x1="175" y1="150" x2="77" y2="214" marker-end="url(#arrow)"/>
+<line class="arr" x1="175" y1="150" x2="174" y2="214" marker-end="url(#arrow)"/>
+<line class="arr" x1="175" y1="150" x2="271" y2="214" marker-end="url(#arrow)"/>
+
+<g class="gray">
+  <rect x="35" y="222" width="85" height="56" rx="8"/>
+  <text class="th" x="77.5" y="240" text-anchor="middle" dominant-baseline="central">Team A</text>
+  <text class="ts" x="77.5" y="258" text-anchor="middle" dominant-baseline="central">drifts</text>
+</g>
+<g class="gray">
+  <rect x="132" y="222" width="85" height="56" rx="8"/>
+  <text class="th" x="174.5" y="240" text-anchor="middle" dominant-baseline="central">Team B</text>
+  <text class="ts" x="174.5" y="258" text-anchor="middle" dominant-baseline="central">drifts</text>
+</g>
+<g class="gray">
+  <rect x="229" y="222" width="85" height="56" rx="8"/>
+  <text class="th" x="271.5" y="240" text-anchor="middle" dominant-baseline="central">Team C</text>
+  <text class="ts" x="271.5" y="258" text-anchor="middle" dominant-baseline="central">drifts</text>
+</g>
+
+<text class="ts tm" x="175" y="325" text-anchor="middle">no vertical axis</text>
+<text class="ts tm" x="175" y="360" text-anchor="middle">publish · discover · install · version</text>
+
+<rect class="panel" x="350" y="30" width="310" height="352" rx="12"/>
+<text class="th tp" x="505" y="54" text-anchor="middle">Federation</text>
+<text class="ts tm" x="505" y="72" text-anchor="middle">trust topology</text>
+
+<g class="teal">
+  <rect x="405" y="80" width="200" height="56" rx="8"/>
+  <text class="th" x="505" y="98" text-anchor="middle" dominant-baseline="central">Org-level beliefs</text>
+  <text class="ts" x="505" y="116" text-anchor="middle" dominant-baseline="central">emergent, not decreed</text>
+</g>
+
+<line class="arr" x1="475" y1="176" x2="475" y2="140" marker-end="url(#arrow)"/>
+<line class="arr" x1="535" y1="140" x2="535" y2="176" marker-end="url(#arrow)"/>
+<text class="ts tm" x="467" y="158" text-anchor="end" dominant-baseline="central">promote</text>
+<text class="ts tm" x="543" y="158" text-anchor="start" dominant-baseline="central">project</text>
+
+<g class="teal">
+  <rect x="405" y="180" width="200" height="56" rx="8"/>
+  <text class="th" x="505" y="198" text-anchor="middle" dominant-baseline="central">Exchange</text>
+  <text class="ts" x="505" y="216" text-anchor="middle" dominant-baseline="central">ADRs — decisions travel</text>
+</g>
+
+<line class="arr" x1="407" y1="274" x2="445" y2="240" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line class="arr" x1="505" y1="274" x2="505" y2="240" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line class="arr" x1="603" y1="274" x2="565" y2="240" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+<g class="gray">
+  <rect x="362" y="278" width="90" height="44" rx="8"/>
+  <text class="th" x="407" y="300" text-anchor="middle" dominant-baseline="central">Team A</text>
+</g>
+<g class="gray">
+  <rect x="460" y="278" width="90" height="44" rx="8"/>
+  <text class="th" x="505" y="300" text-anchor="middle" dominant-baseline="central">Team B</text>
+</g>
+<g class="gray">
+  <rect x="558" y="278" width="90" height="44" rx="8"/>
+  <text class="th" x="603" y="300" text-anchor="middle" dominant-baseline="central">Team C</text>
+</g>
+
+<text class="ts tm" x="505" y="352" text-anchor="middle">govern · promote · aggregate</text>
+<text class="ts tm" x="505" y="370" text-anchor="middle">project · prune</text>
+</svg>

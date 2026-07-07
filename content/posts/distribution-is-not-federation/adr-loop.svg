@@ -1,0 +1,97 @@
+<svg width="680" viewBox="0 0 680 480" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The ADR loop</title>
+<desc>A publishing team surfaces a finding in reflection, distills it through the team forum, and publishes an ADR to an exchange. A receiving team pulls matching ADRs, derives a local diff, and curates it — closing the loop with its own ADR.</desc>
+<style>
+text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.th{font-size:14px;font-weight:600}
+.ts{font-size:12px;font-weight:400}
+.tp{fill:#2C2C2A}
+.tm{fill:#6E6D66}
+.panel{fill:none;stroke:#C5C3BA;stroke-width:1;stroke-dasharray:6 4}
+.arr{fill:none;stroke:#5F5E5A;stroke-width:1.5}
+.mk{fill:none;stroke:#5F5E5A;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.teal rect{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1}
+.teal .th{fill:#085041}
+.teal .ts{fill:#0F6E56}
+.gray rect{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1}
+.gray .th{fill:#444441}
+.gray .ts{fill:#5F5E5A}
+.purple rect{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.purple .th{fill:#3C3489}
+.purple .ts{fill:#534AB7}
+@media (prefers-color-scheme:dark){
+.tp{fill:#E8E6DD}
+.tm{fill:#A8A69D}
+.panel{stroke:#55544F}
+.arr{stroke:#B4B2A9}
+.mk{stroke:#B4B2A9}
+.teal rect{fill:#085041;stroke:#5DCAA5}
+.teal .th{fill:#9FE1CB}
+.teal .ts{fill:#5DCAA5}
+.gray rect{fill:#444441;stroke:#B4B2A9}
+.gray .th{fill:#D3D1C7}
+.gray .ts{fill:#B4B2A9}
+.purple rect{fill:#3C3489;stroke:#AFA9EC}
+.purple .th{fill:#CECBF6}
+.purple .ts{fill:#AFA9EC}
+}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk" d="M2 1L8 5L2 9"/></marker></defs>
+
+<rect class="panel" x="40" y="40" width="600" height="126" rx="12"/>
+<text class="th tp" x="60" y="64" text-anchor="start">Publishing node — team A</text>
+
+<g class="gray">
+  <rect x="65" y="90" width="130" height="56" rx="8"/>
+  <text class="th" x="130" y="108" text-anchor="middle" dominant-baseline="central">Reflection</text>
+  <text class="ts" x="130" y="126" text-anchor="middle" dominant-baseline="central">friction + fix</text>
+</g>
+<line class="arr" x1="197" y1="118" x2="228" y2="118" marker-end="url(#arrow)"/>
+<g class="purple">
+  <rect x="230" y="90" width="130" height="56" rx="8"/>
+  <text class="th" x="295" y="108" text-anchor="middle" dominant-baseline="central">Forum</text>
+  <text class="ts" x="295" y="126" text-anchor="middle" dominant-baseline="central">retro distills</text>
+</g>
+<line class="arr" x1="362" y1="118" x2="393" y2="118" marker-end="url(#arrow)"/>
+<g class="teal">
+  <rect x="395" y="90" width="225" height="56" rx="8"/>
+  <text class="th" x="507.5" y="108" text-anchor="middle" dominant-baseline="central">ADR</text>
+  <text class="ts" x="507.5" y="126" text-anchor="middle" dominant-baseline="central">what · why · evidence · scope</text>
+</g>
+
+<line class="arr" x1="507.5" y1="168" x2="507.5" y2="223" marker-end="url(#arrow)"/>
+<text class="ts tm" x="519" y="196" text-anchor="start" dominant-baseline="central">publish</text>
+
+<g class="teal">
+  <rect x="385" y="225" width="200" height="56" rx="8"/>
+  <text class="th" x="485" y="243" text-anchor="middle" dominant-baseline="central">Exchange</text>
+  <text class="ts" x="485" y="261" text-anchor="middle" dominant-baseline="central">any node can pull</text>
+</g>
+
+<line class="arr" x1="445" y1="283" x2="135" y2="376" marker-end="url(#arrow)"/>
+<text class="ts tm" x="300" y="314" text-anchor="middle" dominant-baseline="central">pull</text>
+
+<line class="arr" x1="537.5" y1="376" x2="537.5" y2="283" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<text class="ts tm" x="549" y="308" text-anchor="start" dominant-baseline="central">loop closes</text>
+
+<rect class="panel" x="35" y="330" width="610" height="126" rx="12"/>
+<text class="th tp" x="55" y="354" text-anchor="start">Receiving node — team B</text>
+
+<g class="gray">
+  <rect x="60" y="380" width="140" height="56" rx="8"/>
+  <text class="th" x="130" y="398" text-anchor="middle" dominant-baseline="central">Discovery</text>
+  <text class="ts" x="130" y="416" text-anchor="middle" dominant-baseline="central">matching ADRs</text>
+</g>
+<line class="arr" x1="202" y1="408" x2="243" y2="408" marker-end="url(#arrow)"/>
+<g class="gray">
+  <rect x="245" y="380" width="160" height="56" rx="8"/>
+  <text class="th" x="325" y="398" text-anchor="middle" dominant-baseline="central">Derivation</text>
+  <text class="ts" x="325" y="416" text-anchor="middle" dominant-baseline="central">local diff proposed</text>
+</g>
+<line class="arr" x1="407" y1="408" x2="448" y2="408" marker-end="url(#arrow)"/>
+<g class="purple">
+  <rect x="450" y="380" width="175" height="56" rx="8"/>
+  <text class="th" x="537.5" y="398" text-anchor="middle" dominant-baseline="central">Curation</text>
+  <text class="ts" x="537.5" y="416" text-anchor="middle" dominant-baseline="central">keep · adapt · discard</text>
+</g>
+</svg>
