@@ -27,7 +27,7 @@ First, harness knowledge is **semantic and context-bound**. "Always return Resul
 
 Second, harness knowledge **decays faster than code**. Patterns encode assumptions about *current* model behavior. An old library still compiles; an old context-management pattern is actively harmful two model generations later. A curated catalog without aggressive gardening becomes a graveyard with good SEO.
 
-Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural rather than optional. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
+Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural and impossible to route around. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
 
 Templates drift, Böckeler said, and nobody contributes back upstream. A registry doesn't fix that. It makes the drift easier to install.
 
@@ -57,7 +57,7 @@ Play that forward. Every team runs its own retro-skill-shaped loop, independentl
 
 The mental model I'm proposing is one every developer already has in their bones: **treat harness knowledge like a distributed version control system.**
 
-No central harness by mechanism. Instead, any number of exchange repos that form along affinity — shared stack, shared domain, or simply people who like trading notes. Every node keeps its own complete harness. Knowledge flows **pull-based** between nodes that trust each other. Reputation accrues to nodes whose patterns carry evidence and get adopted; the "org catalog" is not decreed, it's whichever exchange most teams happen to track — a blessed tree, emergent through trust gravity. Aggregation runs through lieutenants: maintainers at each altitude who curate what rises and what descends, the way kernel subsystem maintainers do.
+No central harness by mechanism. Instead, any number of exchange repos that form along affinity — shared stack, shared domain, or simply people who like trading notes. The forum around an exchange is not just a ritual, it is the exchange's *definition*: its membership implicitly sets the applicability scope, because the abstraction level of an exchange is whatever holds across all the nodes it tracks. Every node keeps its own complete harness. Knowledge flows **pull-based** between nodes that trust each other. Reputation accrues to nodes whose patterns carry evidence and get adopted; the "org catalog" is not decreed, it's whichever exchange most teams happen to track — a blessed tree, emergent through trust gravity. Aggregation runs through lieutenants: maintainers at each altitude who curate what rises and what descends, the way kernel subsystem maintainers do.
 
 ![The distributed harness topology: projects consolidate into team harnesses, which exchange knowledge pull-based through affinity exchanges curated by lieutenants, with the most-tracked exchange emerging as the blessed tree](dvcs-topology.svg)
 
@@ -67,9 +67,11 @@ Which raises the practical question: if artifacts don't transfer cleanly, what a
 
 **The decision travels, not the artifact.** The exchange medium is an ADR. The loop looks like this: a team's reflection practice — session retros, a `/reflect` command, a retro-skill-style agent — surfaces a friction and a fix. In the team forum, usually at the retrospective, that finding is distilled into an ADR that describes the *change to the harness*: what was changed (a guide, a sensor, a skill, an AGENTS snippet), why, with what evidence, and under what applicability conditions. That ADR is what gets published to the exchange.
 
-![The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR](adr-loop.svg)
+{{< adr-loop-sim fallback="adr-loop.svg" alt="The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR" >}}
 
 Any other node can then **derive its own harness diff from the ADR**. The projection happens at the receiving end, in the receiver's context, typically agent-assisted: a discovery agent finds ADRs matching your stack and topology, a local agent proposes the concrete diff against *your* harness, a human curates the result. Keep, adapt, or discard — recorded in your own ADR.
+
+This receiving-side loop deserves a name, and the honest one is **adopt** — the word this essay has already leaned on. An adoption ends in one of two ways, and both map cleanly back onto version control. If the decision applies without local modification, it is a *fast-forward*. If it needs adapting, the adaptation is recorded as a **trim** — a deliberate, documented divergence — and the trim ADR is the merge commit. That distinction quietly answers the drift worry the whole essay started from: once every deliberate divergence is documented as a trim, drift acquires a precise definition — **undocumented divergence**. A drift check stops being noise ("you differ from upstream") and becomes a finding ("you differ, and no ADR says why"). Every node sits in one of three states against its upstream: fast-forwardable, merged-with-trim, or drifted.
 
 Notice what this does to the marketplace comparison. Install-versus-adoption stops being a philosophical point and becomes mechanical: a marketplace ships artifacts; a federation ships decisions. Copy-paste is not discouraged — it is architecturally impossible, because every adoption necessarily passes through local derivation and curation. It also repairs the DVCS analogy at its weakest joint: this is much closer to a patch description on the kernel mailing list than to a package registry.
 
@@ -95,6 +97,8 @@ The federation is also what organizes the output of all the per-node promote too
 
 **Evidence is gameable too.** "Adopted by N teams with evidence" can be inflated just like stars. It's still a better signal, because applicability filtering plus mandatory local curation means a gamed pattern fails loudly at derivation time — but I won't pretend the measurement problem is solved.
 
+**Cherry-picking is expensive.** In theory a node can adopt a single ADR the way you'd cherry-pick a commit. In practice, selective per-ADR picks are the most complex part of the mechanic to build, and small topologies don't need them: when the drift check fires, you adopt or trim wholesale. Treat picks as an optimization for large federations, not a day-one requirement.
+
 **Over-abstraction on the way up** is caught by the re-projection gate; **decay** by gardening from day one, not as a phase-three add-on. Both are load-bearing, not nice-to-have.
 
 ## The missing link
@@ -106,3 +110,9 @@ Research is circling it from the machine side. [FederatedSkill](https://arxiv.or
 It is InnerSource meeting federated computational governance, carried by loop agents. The machine side of scaling harnesses keeps getting solved, again and again. The human side is still open — and the window in which "we installed a registry, problem solved" hardens into conventional wisdom is closing fast.
 
 Distribution is not federation. Build both.
+
+---
+
+*Changelog — this essay has been revised since publication:*
+
+*2026-07-09 — Named the receiving-side loop **adopt** and added its two outcomes (fast-forward, trim-merge) along with the resulting definition of drift as undocumented divergence. Added the forum-defines-applicability point to the model and the cherry-picking caveat to the failure modes. Sharpened the description of Port's revised framing. Replaced the static ADR-loop diagram with an interactive simulation.*
