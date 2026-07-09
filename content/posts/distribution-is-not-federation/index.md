@@ -27,7 +27,7 @@ First, harness knowledge is **semantic and context-bound**. "Always return Resul
 
 Second, harness knowledge **decays faster than code**. Patterns encode assumptions about *current* model behavior. An old library still compiles; an old context-management pattern is actively harmful two model generations later. A curated catalog without aggressive gardening becomes a graveyard with good SEO.
 
-Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural rather than optional. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
+Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural and impossible to route around. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
 
 Templates drift, Böckeler said, and nobody contributes back upstream. A registry doesn't fix that. It makes the drift easier to install.
 
@@ -110,3 +110,9 @@ Research is circling it from the machine side. [FederatedSkill](https://arxiv.or
 It is InnerSource meeting federated computational governance, carried by loop agents. The machine side of scaling harnesses keeps getting solved, again and again. The human side is still open — and the window in which "we installed a registry, problem solved" hardens into conventional wisdom is closing fast.
 
 Distribution is not federation. Build both.
+
+---
+
+*Changelog — this essay has been revised since publication:*
+
+*2026-07-09 — Named the receiving-side loop **adopt** and added its two outcomes (fast-forward, trim-merge) along with the resulting definition of drift as undocumented divergence. Added the forum-defines-applicability point to the model and the cherry-picking caveat to the failure modes. Sharpened the description of Port's revised framing. Replaced the static ADR-loop diagram with an interactive simulation.*
