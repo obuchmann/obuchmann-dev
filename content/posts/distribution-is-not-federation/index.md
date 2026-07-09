@@ -67,7 +67,7 @@ Which raises the practical question: if artifacts don't transfer cleanly, what a
 
 **The decision travels, not the artifact.** The exchange medium is an ADR. The loop looks like this: a team's reflection practice — session retros, a `/reflect` command, a retro-skill-style agent — surfaces a friction and a fix. In the team forum, usually at the retrospective, that finding is distilled into an ADR that describes the *change to the harness*: what was changed (a guide, a sensor, a skill, an AGENTS snippet), why, with what evidence, and under what applicability conditions. That ADR is what gets published to the exchange.
 
-![The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR](adr-loop.svg)
+{{< adr-loop-sim fallback="adr-loop.svg" alt="The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR" >}}
 
 Any other node can then **derive its own harness diff from the ADR**. The projection happens at the receiving end, in the receiver's context, typically agent-assisted: a discovery agent finds ADRs matching your stack and topology, a local agent proposes the concrete diff against *your* harness, a human curates the result. Keep, adapt, or discard — recorded in your own ADR.
 
