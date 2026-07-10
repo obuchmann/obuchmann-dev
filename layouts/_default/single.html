@@ -5,7 +5,8 @@
     {{ with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{ end }}
     <p class="post-meta">
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-      · {{ .ReadingTime }} min read
+      {{ if .Lastmod.After .Date }}· updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>
+      {{ end }}· {{ .ReadingTime }} min read
     </p>
   </header>
 
