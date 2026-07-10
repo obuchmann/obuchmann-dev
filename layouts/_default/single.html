@@ -13,6 +13,10 @@
     {{ .Content }}
   </div>
 
+  <aside class="post-disclosure">
+    Concept and final editing by me — AI agents were used for research and drafting.
+  </aside>
+
   {{ with .GetTerms "tags" }}
   <footer class="post-tags">
     {{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}

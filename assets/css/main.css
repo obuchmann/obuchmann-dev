@@ -260,6 +260,17 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
+/* Disclosure */
+
+.post-disclosure {
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
 /* Tags */
 
 .post-tags {
@@ -269,6 +280,12 @@ a:hover {
   margin: 2.5rem 0 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
+}
+
+.post-disclosure + .post-tags {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: none;
 }
 
 .tag {
