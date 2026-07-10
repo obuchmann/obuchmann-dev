@@ -43,3 +43,8 @@ weight = 20
 name = "GitHub"
 url = "https://github.com/obuchmann/obuchmann-dev"
 weight = 30
+
+[[menus.main]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/oliver-buchmann/"
+weight = 40
