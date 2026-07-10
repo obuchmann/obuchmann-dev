@@ -2,6 +2,7 @@
 title: "Distribution Is Not Federation"
 subtitle: "The missing link in harness engineering"
 date: 2026-07-07
+lastmod: 2026-07-10
 slug: distribution-is-not-federation
 description: "Marketplaces solve distribution of harness knowledge — publish, discover, install. Scaling harness knowledge requires federation: govern, promote, aggregate, project, prune. Different verbs, different problem."
 tags: [harness-engineering, agentic-engineering]

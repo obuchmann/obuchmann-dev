@@ -1,0 +1,54 @@
+{{- /*
+  JSON-LD structured data.
+  Expects a dict: "page" (the current page), "image" (absolute social image URL),
+  "description" (resolved meta description).
+*/ -}}
+{{- $page := .page -}}
+{{- $image := .image -}}
+{{- $description := .description -}}
+{{- if and $page.IsPage (eq $page.Section "posts") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ $page.Permalink }}
+  },
+  "headline": {{ $page.Title }},
+  "description": {{ $description }},
+  "image": {{ $image }},
+  "url": {{ $page.Permalink }},
+  "datePublished": {{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }},
+  "dateModified": {{ $page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }},
+  "wordCount": {{ $page.WordCount }},
+  "inLanguage": {{ site.Language.LanguageCode }},
+  {{ with $page.Params.tags }}"keywords": {{ delimit . ", " }},{{ end }}
+  "author": {
+    "@type": "Person",
+    "name": {{ site.Params.author }},
+    "url": {{ site.BaseURL }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ site.Params.author }},
+    "url": {{ site.BaseURL }}
+  }
+}
+</script>
+{{- else if $page.IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "description": {{ site.Params.description }},
+  "url": {{ site.BaseURL }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.Params.author }},
+    "url": {{ site.BaseURL }}
+  }
+}
+</script>
+{{- end }}
