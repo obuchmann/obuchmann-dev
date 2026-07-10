@@ -57,7 +57,7 @@ Play that forward. Every team runs its own retro-skill-shaped loop, independentl
 
 The mental model I'm proposing is one every developer already has in their bones: **treat harness knowledge like a distributed version control system.**
 
-No central harness by mechanism. Instead, any number of exchange repos that form along affinity — shared stack, shared domain, or simply people who like trading notes. Every node keeps its own complete harness. Knowledge flows **pull-based** between nodes that trust each other. Reputation accrues to nodes whose patterns carry evidence and get adopted; the "org catalog" is not decreed, it's whichever exchange most teams happen to track — a blessed tree, emergent through trust gravity. Aggregation runs through lieutenants: maintainers at each altitude who curate what rises and what descends, the way kernel subsystem maintainers do.
+No central harness by mechanism. Instead, any number of exchange repos that form along affinity — shared stack, shared domain, or simply people who like trading notes. The forum around an exchange is not just a ritual, it is the exchange's *definition*: its membership implicitly sets the applicability scope, because the abstraction level of an exchange is whatever holds across all the nodes it tracks. Every node keeps its own complete harness. Knowledge flows **pull-based** between nodes that trust each other. Reputation accrues to nodes whose patterns carry evidence and get adopted; the "org catalog" is not decreed, it's whichever exchange most teams happen to track — a blessed tree, emergent through trust gravity. Aggregation runs through lieutenants: maintainers at each altitude who curate what rises and what descends, the way kernel subsystem maintainers do.
 
 ![The distributed harness topology: projects consolidate into team harnesses, which exchange knowledge pull-based through affinity exchanges curated by lieutenants, with the most-tracked exchange emerging as the blessed tree](dvcs-topology.svg)
 
@@ -71,11 +71,15 @@ Which raises the practical question: if artifacts don't transfer cleanly, what a
 
 Any other node can then **derive its own harness diff from the ADR**. The projection happens at the receiving end, in the receiver's context, typically agent-assisted: a discovery agent finds ADRs matching your stack and topology, a local agent proposes the concrete diff against *your* harness, a human curates the result. Keep, adapt, or discard — recorded in your own ADR.
 
+This receiving-side loop deserves a name, and the honest one is **adopt** — the word this essay has already leaned on. An adoption ends in one of two ways, and both map cleanly back onto version control. If the decision applies without local modification, it is a *fast-forward*. If it needs adapting, the adaptation is recorded as a **trim** — a deliberate, documented divergence — and the trim ADR is the merge commit. That distinction quietly answers the drift worry the whole essay started from: once every deliberate divergence is documented as a trim, drift acquires a precise definition — **undocumented divergence**. A drift check stops being noise ("you differ from upstream") and becomes a finding ("you differ, and no ADR says why"). Every node sits in one of three states against its upstream: fast-forwardable, merged-with-trim, or drifted.
+
+One property of the exchange medium does quiet, load-bearing work in all of this: **ADRs are append-only.** A published decision is never edited — it is superseded by a new one that says so. Which means a node's synchronization state is not a semantic comparison of documents but a set difference: which upstream decisions have I adopted, trimmed, or declined — and which are new. The adopt loop consumes a log the way a service consumes an event stream, with supersession as the compensating entry. Wikis and living documents mutate in place and push onto every consumer the job of diffing prose and guessing what an edit meant; an append-only decision log is what makes derivation cheap enough to run as a loop at all.
+
 Notice what this does to the marketplace comparison. Install-versus-adoption stops being a philosophical point and becomes mechanical: a marketplace ships artifacts; a federation ships decisions. Copy-paste is not discouraged — it is architecturally impossible, because every adoption necessarily passes through local derivation and curation. It also repairs the DVCS analogy at its weakest joint: this is much closer to a patch description on the kernel mailing list than to a package registry.
 
 Around that exchange medium sit the moving parts. **Loop agents** keep the system alive: a consolidation loop that turns reflections into publishable ADRs, an aggregation loop that scans exchanges for promotion-ready patterns and drafts the generalization for a lieutenant to judge, a scout for on-demand discovery, and a gardener on every exchange flagging decayed patterns for re-vouching or pruning.
 
-**A promotion gate** keeps the vertical honest: a belief rises only with evidence, adoption across multiple contexts, and proof that it re-projects into concrete enforcement at least twice — otherwise it has evaporated into "write good code." And **subsidiarity** governs altitude: beliefs live as locally as possible, as centrally as necessary, with descent always allowing local trim.
+**A promotion gate** keeps the vertical honest: a belief rises only with evidence, adoption across multiple contexts, and proof that it re-projects into concrete enforcement at least twice — otherwise it has evaporated into "write good code." The hardening side of that requirement builds on [Russell Miles' progressive-hardening ladder](https://github.com/Habitat-Thinking/ai-literacy-superpowers/blob/89199fec30e0e21d194cfaf9bf1f0029813e233c/ai-literacy-superpowers/skills/harness-engineering/SKILL.md) — a declaration acquires first an agent that reviews it, then a deterministic check, without the surrounding system caring which fills the slot. And **subsidiarity** governs altitude: beliefs live as locally as possible, as centrally as necessary, with descent always allowing local trim.
 
 If this sounds like Data Mesh's federated computational governance applied to agent-governance artifacts instead of data products — it is, deliberately. The intellectual scaffolding here is not new: InnerSource for the social mechanism, federated governance for the structure, DVCS for the topology. What's new is pointing them at harness knowledge.
 
@@ -95,6 +99,8 @@ The federation is also what organizes the output of all the per-node promote too
 
 **Evidence is gameable too.** "Adopted by N teams with evidence" can be inflated just like stars. It's still a better signal, because applicability filtering plus mandatory local curation means a gamed pattern fails loudly at derivation time — but I won't pretend the measurement problem is solved.
 
+**Cherry-picking is expensive.** In theory a node can adopt a single ADR the way you'd cherry-pick a commit. In practice, selective per-ADR picks are the most complex part of the mechanic to build, and small topologies don't need them: when the drift check fires, you adopt or trim wholesale. Treat picks as an optimization for large federations, not a day-one requirement.
+
 **Over-abstraction on the way up** is caught by the re-projection gate; **decay** by gardening from day one, not as a phase-three add-on. Both are load-bearing, not nice-to-have.
 
 ## The missing link
@@ -106,3 +112,11 @@ Research is circling it from the machine side. [FederatedSkill](https://arxiv.or
 It is InnerSource meeting federated computational governance, carried by loop agents. The machine side of scaling harnesses keeps getting solved, again and again. The human side is still open — and the window in which "we installed a registry, problem solved" hardens into conventional wisdom is closing fast.
 
 Distribution is not federation. Build both.
+
+---
+
+*Changelog — this essay has been revised since publication:*
+
+*2026-07-08 — Port folded its at-scale piece into a broader explainer at a new URL; updated the link and quote accordingly, and rewrote the concession passage to note that the revision dropped the original admission.*
+
+*2026-07-10 — v1.1: named the receiving-side loop (**adopt** — fast-forward or trim, drift redefined as undocumented divergence), defined an exchange's forum membership as its applicability scope, added the append-only property of the ADR exchange medium, added the cherry-picking caveat to "What breaks", and credited Russell Miles' progressive-hardening ladder in the promotion-gate passage.*
