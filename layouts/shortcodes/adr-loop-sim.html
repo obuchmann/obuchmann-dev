@@ -1,0 +1,390 @@
+{{- /* Interactive ADR-loop simulation. Params: fallback (image in page bundle for noscript), alt */ -}}
+{{- $fallback := .Get "fallback" -}}
+{{- $alt := .Get "alt" | default "The ADR loop" -}}
+<noscript>
+  {{ if $fallback }}<img src="{{ $fallback }}" alt="{{ $alt }}">{{ end }}
+</noscript>
+
+<style>
+.adrsim {
+  --sim-teal-bg: #E1F5EE; --sim-teal-bd: #0F6E56; --sim-teal-fg: #085041; --sim-teal-fg2: #0F6E56;
+  --sim-gray-bg: #F1EFE8; --sim-gray-bd: #5F5E5A; --sim-gray-fg: #444441; --sim-gray-fg2: #5F5E5A;
+  --sim-purple-bg: #EEEDFE; --sim-purple-bd: #534AB7; --sim-purple-fg: #3C3489; --sim-purple-fg2: #534AB7;
+  --sim-panel: #C5C3BA;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+@media (prefers-color-scheme: dark) {
+  .adrsim {
+    --sim-teal-bg: #085041; --sim-teal-bd: #5DCAA5; --sim-teal-fg: #9FE1CB; --sim-teal-fg2: #5DCAA5;
+    --sim-gray-bg: #444441; --sim-gray-bd: #B4B2A9; --sim-gray-fg: #D3D1C7; --sim-gray-fg2: #B4B2A9;
+    --sim-purple-bg: #3C3489; --sim-purple-bd: #AFA9EC; --sim-purple-fg: #CECBF6; --sim-purple-fg2: #AFA9EC;
+    --sim-panel: #55544F;
+  }
+}
+.adrsim-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  gap: 0.75rem;
+}
+@media (max-width: 560px) {
+  .adrsim-stage { grid-template-columns: 1fr; }
+}
+.adrsim-col {
+  border: 1px dashed var(--sim-panel);
+  border-radius: 10px;
+  padding: 0.6rem;
+  min-width: 0;
+}
+.adrsim-col h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+.adrsim-col h4 small { display: block; font-weight: 400; color: var(--muted); }
+.adrsim-box {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 0.4rem 0.55rem;
+  margin-bottom: 0.45rem;
+}
+.adrsim-box:last-child { margin-bottom: 0; }
+.adrsim-box .adrsim-box-title { font-weight: 600; display: block; }
+.adrsim-gray { background: var(--sim-gray-bg); border-color: var(--sim-gray-bd); color: var(--sim-gray-fg2); }
+.adrsim-gray .adrsim-box-title { color: var(--sim-gray-fg); }
+.adrsim-purple { background: var(--sim-purple-bg); border-color: var(--sim-purple-bd); color: var(--sim-purple-fg2); }
+.adrsim-purple .adrsim-box-title { color: var(--sim-purple-fg); }
+.adrsim-teal { background: var(--sim-teal-bg); border-color: var(--sim-teal-bd); color: var(--sim-teal-fg2); }
+.adrsim-teal .adrsim-box-title { color: var(--sim-teal-fg); }
+.adrsim ul {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+}
+.adrsim ul:empty::after {
+  content: attr(data-empty);
+  color: inherit;
+  opacity: 0.65;
+  font-style: italic;
+}
+.adrsim li {
+  margin: 0.2rem 0 0;
+  padding: 0.15rem 0.35rem;
+  border-radius: 5px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  animation: adrsim-in 0.35s ease;
+}
+.adrsim li .adrsim-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  opacity: 0.8;
+}
+@keyframes adrsim-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+.adrsim-flow-arrow {
+  text-align: center;
+  color: var(--muted);
+  line-height: 1;
+  margin: -0.15rem 0 0.3rem;
+  user-select: none;
+}
+.adrsim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+.adrsim button {
+  font: inherit;
+  font-size: 0.8125rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+.adrsim button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.adrsim button:disabled { opacity: 0.4; cursor: default; }
+.adrsim button.adrsim-next {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.adrsim-reset { margin-left: auto; }
+.adrsim-decision {
+  margin-top: 0.45rem;
+  border: 1px solid var(--sim-purple-bd);
+  background: var(--sim-purple-bg);
+  color: var(--sim-purple-fg2);
+  border-radius: 8px;
+  padding: 0.4rem 0.55rem;
+  animation: adrsim-in 0.35s ease;
+}
+.adrsim-decision .adrsim-box-title { color: var(--sim-purple-fg); font-weight: 600; }
+.adrsim-diff {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  white-space: pre;
+  overflow-x: auto;
+}
+.adrsim-decision-buttons { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.35rem; }
+.adrsim-decision-buttons button { font-size: 0.75rem; padding: 0.2rem 0.55rem; }
+.adrsim-caption {
+  margin: 0.85rem 0 0;
+  min-height: 2.6em;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-style: italic;
+}
+.adrsim-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sim-teal-bd);
+  box-shadow: 0 0 0 3px var(--sim-teal-bg);
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.7s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .adrsim-dot { display: none !important; }
+  .adrsim li { animation: none; }
+  .adrsim-decision { animation: none; }
+}
+</style>
+
+<div class="adrsim" id="adrsim" hidden>
+  <div class="adrsim-stage" id="adrsim-stage">
+    <div class="adrsim-col">
+      <h4>Team A <small>publishing node</small></h4>
+      <div class="adrsim-box adrsim-gray" id="adrsim-log">
+        <span class="adrsim-box-title">Reflection log</span>
+        <ul id="adrsim-log-list" data-empty="no entries yet"></ul>
+      </div>
+      <div class="adrsim-flow-arrow" aria-hidden="true">&#8595;</div>
+      <div class="adrsim-box adrsim-purple" id="adrsim-forum">
+        <span class="adrsim-box-title">Team forum</span>
+        <span>consolidates at the retro</span>
+      </div>
+      <div class="adrsim-flow-arrow" aria-hidden="true">&#8595;</div>
+      <div class="adrsim-box adrsim-teal" id="adrsim-harness-a">
+        <span class="adrsim-box-title">Team harness A</span>
+        <ul id="adrsim-adr-a" data-empty="no ADRs yet"></ul>
+      </div>
+    </div>
+    <div class="adrsim-col">
+      <h4>Exchange <small>the decision travels</small></h4>
+      <div class="adrsim-box adrsim-teal" id="adrsim-exchange">
+        <span class="adrsim-box-title">Published ADRs</span>
+        <ul id="adrsim-adr-x" data-empty="empty shelf"></ul>
+      </div>
+    </div>
+    <div class="adrsim-col">
+      <h4>Team B <small>receiving node</small></h4>
+      <div class="adrsim-box adrsim-teal" id="adrsim-harness-b">
+        <span class="adrsim-box-title">Team harness B</span>
+        <ul id="adrsim-adr-b" data-empty="its own complete harness"></ul>
+      </div>
+      <div class="adrsim-decision" id="adrsim-decision" hidden>
+        <span class="adrsim-box-title">Derived diff — curate it</span>
+        <div class="adrsim-diff" id="adrsim-diff"></div>
+        <div class="adrsim-decision-buttons">
+          <button type="button" id="adrsim-keep">Keep</button>
+          <button type="button" id="adrsim-adapt">Adapt</button>
+          <button type="button" id="adrsim-discard">Discard</button>
+        </div>
+      </div>
+    </div>
+    <div class="adrsim-dot" id="adrsim-dot" hidden></div>
+  </div>
+  <div class="adrsim-controls">
+    <button type="button" id="adrsim-reflect">1&#183; Reflect</button>
+    <button type="button" id="adrsim-consolidate">2&#183; Consolidate</button>
+    <button type="button" id="adrsim-publish">3&#183; Publish</button>
+    <button type="button" id="adrsim-adopt">4&#183; Adopt</button>
+    <button type="button" class="adrsim-reset" id="adrsim-reset">Reset</button>
+  </div>
+  <p class="adrsim-caption" id="adrsim-caption" aria-live="polite"></p>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('adrsim');
+  if (!root) return;
+  root.hidden = false;
+
+  var FINDINGS = [
+    {
+      friction: 'Agent crossed a module boundary — no sensor fired',
+      title: 'Add a boundary sensor to pre-commit',
+      diff: '+ sensors/boundary-check.yml\n+ AGENTS.md: module import rules'
+    },
+    {
+      friction: 'Full-file reads kept overflowing the context window',
+      title: 'Guide: read sections, not files',
+      diff: '+ guides/context-budget.md\n~ AGENTS.md: partial-read rule'
+    },
+    {
+      friction: 'A flaky integration test sent the agent into a retry loop',
+      title: 'Quarantine flaky tests before agent runs',
+      diff: '+ sensors/flaky-quarantine.yml\n~ ci/agent-pipeline.yml'
+    }
+  ];
+
+  var el = function (id) { return document.getElementById('adrsim-' + id); };
+  var stage = el('stage'), dot = el('dot'), caption = el('caption');
+  var logList = el('log-list'), adrA = el('adr-a'), adrX = el('adr-x'), adrB = el('adr-b');
+  var decision = el('decision'), diffBox = el('diff');
+  var btns = {
+    reflect: el('reflect'), consolidate: el('consolidate'),
+    publish: el('publish'), adopt: el('adopt'), reset: el('reset'),
+    keep: el('keep'), adapt: el('adapt'), discard: el('discard')
+  };
+
+  var state;
+
+  function reset() {
+    state = { round: 0, phase: 'idle', pending: null };
+    logList.innerHTML = adrA.innerHTML = adrX.innerHTML = adrB.innerHTML = '';
+    decision.hidden = true;
+    say('A federation round trip: a finding travels from one team’s session friction into another team’s harness — as a decision, not an artifact. Start with Reflect.');
+    update();
+  }
+
+  function say(text) { caption.textContent = text; }
+
+  function adrId() { return 'ADR-00' + (state.round + 1); }
+
+  function addItem(list, html) {
+    var li = document.createElement('li');
+    li.innerHTML = html;
+    list.appendChild(li);
+    return li;
+  }
+
+  function update() {
+    var next = {
+      idle: 'reflect', reflected: 'consolidate',
+      consolidated: 'publish', published: 'adopt', adopting: null, done: null
+    }[state.phase];
+    ['reflect', 'consolidate', 'publish', 'adopt'].forEach(function (k) {
+      btns[k].disabled = (k !== next);
+      btns[k].classList.toggle('adrsim-next', k === next);
+    });
+    if (state.phase === 'done' && state.round >= FINDINGS.length) {
+      say(caption.textContent + ' All three findings have traveled — reset to replay.');
+    } else if (state.phase === 'done') {
+      btns.reflect.disabled = false;
+      btns.reflect.classList.add('adrsim-next');
+      state.phase = 'idle';
+    }
+  }
+
+  // Animate a dot from one element to another, then run done().
+  function travel(from, to, done) {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { done(); return; }
+    var s = stage.getBoundingClientRect();
+    var a = from.getBoundingClientRect(), b = to.getBoundingClientRect();
+    dot.hidden = false;
+    dot.style.transition = 'none';
+    dot.style.transform = 'translate(' + (a.left - s.left + a.width / 2 - 6) + 'px,' + (a.top - s.top + a.height / 2 - 6) + 'px)';
+    void dot.offsetWidth;
+    dot.style.transition = '';
+    dot.style.transform = 'translate(' + (b.left - s.left + b.width / 2 - 6) + 'px,' + (b.top - s.top + b.height / 2 - 6) + 'px)';
+    var finished = false;
+    var finish = function () {
+      if (finished) return;
+      finished = true;
+      dot.hidden = true;
+      done();
+    };
+    dot.addEventListener('transitionend', finish, { once: true });
+    setTimeout(finish, 900);
+  }
+
+  function lock() {
+    ['reflect', 'consolidate', 'publish', 'adopt'].forEach(function (k) {
+      btns[k].disabled = true;
+      btns[k].classList.remove('adrsim-next');
+    });
+  }
+
+  btns.reflect.addEventListener('click', function () {
+    var f = FINDINGS[state.round];
+    state.pending = f;
+    addItem(logList, f.friction);
+    state.phase = 'reflected';
+    say('Session friction lands in the repo’s reflection log — it rides to main with the feature PR. At the retro, the forum takes over.');
+    update();
+  });
+
+  btns.consolidate.addEventListener('click', function () {
+    lock();
+    travel(el('log'), el('forum'), function () {
+      travel(el('forum'), el('harness-a'), function () {
+        logList.innerHTML = '';
+        addItem(adrA, '<strong>' + adrId() + '</strong> ' + state.pending.title +
+          '<br><span class="adrsim-tag">evidence: reflection log · applies to: modular monolith</span>');
+        state.phase = 'consolidated';
+        say('Human judgment at the forum turns the finding into ' + adrId() + ': what changed, why, with what evidence, under which applicability conditions.');
+        update();
+      });
+    });
+  });
+
+  btns.publish.addEventListener('click', function () {
+    lock();
+    travel(el('harness-a'), el('exchange'), function () {
+      addItem(adrX, '<strong>' + adrId() + '</strong> ' + state.pending.title +
+        '<br><span class="adrsim-tag">from Team A · modular monolith</span>');
+      state.phase = 'published';
+      say(adrId() + ' is on the exchange. The decision travels, not the artifact — no harness files moved.');
+      update();
+    });
+  });
+
+  btns.adopt.addEventListener('click', function () {
+    lock();
+    travel(el('exchange'), el('harness-b'), function () {
+      diffBox.textContent = state.pending.diff;
+      decision.hidden = false;
+      state.phase = 'adopting';
+      say('Team B derives its own harness diff from ' + adrId() + ' — projection happens at the receiving end, in Team B’s context. Now curate: keep, adapt, or discard.');
+    });
+  });
+
+  function decide(mark, label, text) {
+    decision.hidden = true;
+    addItem(adrB, mark + ' <strong>' + adrId() + '</strong> — ' + label);
+    say(text);
+    state.round++;
+    state.phase = 'done';
+    update();
+  }
+
+  btns.keep.addEventListener('click', function () {
+    decide('✓', 'fast-forward', 'Fast-forward: the decision applies cleanly, Team B records the adoption. Loop closed.');
+  });
+  btns.adapt.addEventListener('click', function () {
+    decide('✂', 'trim-merge', 'Trim-merge: Team B adapts the decision locally and records a trim ADR — a deliberate, documented divergence. Loop closed.');
+  });
+  btns.discard.addEventListener('click', function () {
+    decide('✗', 'discarded, documented', 'Discarded — and recorded in Team B’s own ADR. Documented divergence is not drift. Loop closed.');
+  });
+
+  btns.reset.addEventListener('click', reset);
+  reset();
+})();
+</script>

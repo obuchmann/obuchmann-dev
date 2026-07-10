@@ -27,7 +27,7 @@ First, harness knowledge is **semantic and context-bound**. "Always return Resul
 
 Second, harness knowledge **decays faster than code**. Patterns encode assumptions about *current* model behavior. An old library still compiles; an old context-management pattern is actively harmful two model generations later. A curated catalog without aggressive gardening becomes a graveyard with good SEO.
 
-Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural rather than optional. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
+Third — and this is the one Port itself used to admit — **mandates get routed around**. The original version of their piece conceded the point directly: a harness can only govern the agents actually built on it, so mandating the platform just pushes developers to build elsewhere, outside your governance. The revised explainer has quietly dropped that concession — org-level checkpoints are now framed as structural and impossible to route around. The original had it right: harness adoption is pull-based by nature. Architecting a push-shaped answer around a central product doesn't change that; deleting the admission doesn't either.
 
 Templates drift, Böckeler said, and nobody contributes back upstream. A registry doesn't fix that. It makes the drift easier to install.
 
@@ -67,7 +67,7 @@ Which raises the practical question: if artifacts don't transfer cleanly, what a
 
 **The decision travels, not the artifact.** The exchange medium is an ADR. The loop looks like this: a team's reflection practice — session retros, a `/reflect` command, a retro-skill-style agent — surfaces a friction and a fix. In the team forum, usually at the retrospective, that finding is distilled into an ADR that describes the *change to the harness*: what was changed (a guide, a sensor, a skill, an AGENTS snippet), why, with what evidence, and under what applicability conditions. That ADR is what gets published to the exchange.
 
-![The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR](adr-loop.svg)
+{{< adr-loop-sim fallback="adr-loop.svg" alt="The ADR loop: a publishing team distills a finding into an ADR through its forum and publishes it to an exchange; a receiving team pulls it, derives a local diff, and curates it, closing the loop with its own ADR" >}}
 
 Any other node can then **derive its own harness diff from the ADR**. The projection happens at the receiving end, in the receiver's context, typically agent-assisted: a discovery agent finds ADRs matching your stack and topology, a local agent proposes the concrete diff against *your* harness, a human curates the result. Keep, adapt, or discard — recorded in your own ADR.
 
@@ -119,4 +119,6 @@ Distribution is not federation. Build both.
 
 *2026-07-08 — Port folded its at-scale piece into a broader explainer at a new URL; updated the link and quote accordingly, and rewrote the concession passage to note that the revision dropped the original admission.*
 
-*2026-07-10 — v1.1: named the receiving-side loop (**adopt** — fast-forward or trim, drift redefined as undocumented divergence), defined an exchange's forum membership as its applicability scope, added the append-only property of the ADR exchange medium, added the cherry-picking caveat to "What breaks", and credited Russell Miles' progressive-hardening ladder in the promotion-gate passage.*
+*2026-07-09 — Named the receiving-side loop **adopt** and added its two outcomes (fast-forward, trim-merge) along with the resulting definition of drift as undocumented divergence. Added the forum-defines-applicability point to the model and the cherry-picking caveat to the failure modes. Sharpened the description of Port's revised framing. Replaced the static ADR-loop diagram with an interactive simulation.*
+
+*2026-07-10 — v1.1: added the append-only property of the ADR exchange medium and credited Russell Miles' progressive-hardening ladder in the promotion-gate passage.*
