@@ -7,6 +7,8 @@ enableRobotsTXT = true
 [params]
 author = "Oliver Buchmann"
 description = "Notes on software engineering, agent harnesses, and loop engineering."
+headline = "Thoughts in progress."
+tagline = "I write to think — about software architecture, agentic engineering, and how knowledge moves through organizations. Nothing here claims to be right; everything here is an invitation to disagree."
 
 # Cookieless hit counting via GoatCounter (https://<code>.goatcounter.com).
 # Only injected in production builds. Empty string disables it.
@@ -28,6 +30,11 @@ unsafe = false
 [markup.tableOfContents]
 startLevel = 2
 endLevel = 3
+
+[[menus.main]]
+name = "About"
+pageRef = "/about"
+weight = 5
 
 [[menus.main]]
 name = "Posts"
