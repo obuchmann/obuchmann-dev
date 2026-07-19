@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}">
+<html lang="{{ with .Params.lang }}{{ . }}{{ else }}{{ site.Language.LanguageCode }}{{ end }}">
 <head>
   {{ partial "head.html" . }}
 </head>
