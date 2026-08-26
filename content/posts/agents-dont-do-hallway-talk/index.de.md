@@ -1,83 +1,83 @@
 ---
-title: "Agenten machen keinen Flurfunk"
-subtitle: "Menschen gleichen schlechte Wissensverteilung stillschweigend aus. Agenten können das nicht — und das verändert, was Dokumentation leisten muss."
+title: "Agents kennen keinen Flurfunk"
+subtitle: "Menschen gleichen schlechte Wissensverteilung stillschweigend aus. Agents können das nicht — und das verändert, was Dokumentation leisten muss."
 date: 2026-07-19
 slug: agents-dont-do-hallway-talk
-description: "Menschen saugen Firmenkultur und ungeschriebene Praxis osmotisch auf — Flurfunk, Beobachtung, Nachahmung. Agenten können das nicht: Sie arbeiten nur mit dem, was aufgezeichnet ist. Was das aufbrechen lässt, und ein Muster, um die Lücke zu schließen — Entscheidungen als Wissensformat, eine freiwillige Meldestelle für gelebte Praxis, und die menschliche Korrektur als Fixpunkt des Systems."
+description: "Menschen saugen Firmenkultur und ungeschriebene Praxis osmotisch auf — Flurfunk, Beobachtung, Nachahmung. Agents können das nicht: Sie arbeiten nur mit dem, was aufgezeichnet ist. Was das aufbrechen lässt, und ein Muster, um die Lücke zu schließen — Entscheidungen als Wissensformat, eine freiwillige Meldestelle für gelebte Praxis, und die menschliche Korrektur als Fixpunkt des Systems."
 tags: [agentic-engineering, knowledge-work, knowledge-management]
 ---
 
 ## Die Frage
 
-Deine erste Woche in einem neuen Job. Das meiste, was du in dieser Woche lernst, steht nirgendwo geschrieben: Wen man tatsächlich fragt, wenn etwas klemmt. Was „dringend" hier eigentlich bedeutet. Warum das offizielle Formular existiert und niemand es benutzt. Niemand hat beschlossen, dir das beizubringen — du hast zugehört, zugeschaut, nachgeahmt. Ein paar Monate später bist du produktiv. Nicht weil die Dokumentation gut war, sondern weil Menschen bemerkenswert gut darin sind, Lücken zu füllen.
+Erste Woche im neuen Job. Das meiste, was man in dieser Woche lernt, steht nirgends: wen man wirklich fragt, wenn etwas klemmt. Was „dringend" in diesem Haus bedeutet. Warum das offizielle Formular existiert und trotzdem niemand es benutzt. Niemand hat entschieden, einem das beizubringen — man hat zugehört, zugeschaut, nachgemacht. Nach ein paar Monaten ist man arbeitsfähig. Nicht weil die Dokumentation gut war, sondern weil Menschen erstaunlich gut darin sind, Lücken zu füllen.
 
-Jetzt stell einen Agenten neben diese Person. Er liest schneller als jeder Mensch, vergisst nichts, ist immer verfügbar — und er macht keinen Flurfunk. Er hört nicht mit, wenn zwei Kolleg:innen im Vorbeigehen klären, wie „man das hier eigentlich macht". Alles, was er über die Firma weiß, muss irgendwo aufgeschrieben sein.
+Jetzt stellen wir neben diese Person einen Agenten. Er liest schneller als jeder Mensch, vergisst nichts, ist immer verfügbar — und er sitzt in keiner Kaffeeküche. Er hört nicht mit, wenn zwei Kollegen im Vorbeigehen klären, wie man es „bei uns eigentlich macht". Alles, was er über das Unternehmen weiß, muss irgendwo stehen.
 
-Das ist die Frage, um die es in diesem Essay geht: **Wie verteilen wir Wissen in einer Firma so, dass nicht nur Menschen, sondern auch Agenten damit arbeiten können?** Kein neues Problem, wie sich zeigen wird — aber eines, das gerade erst seine Unschuld verliert.
+Das ist die Frage, um die es hier geht: **Wie verteilen wir Wissen im Unternehmen so, dass nicht nur Menschen, sondern auch Agents damit arbeiten können?** Kein neues Problem, wie sich zeigen wird — aber eines, das gerade seine Unschuld verliert.
 
-## Der stille Ausgleich
+## Die stille Kompensation
 
-Dass Firmen trotz lückenhafter Dokumentation funktionieren, ist keine Selbstverständlichkeit — es ist eine fortlaufende Leistung, die nie jemand beauftragt hat. Menschen saugen Kultur und Kontext osmotisch auf: Flurfunk, Beobachtung, Nachahmung. Wo aufgezeichnetes Wissen endet, übernimmt gelebtes Wissen. Die Lücke zwischen beiden gab es immer schon; sie hat nur nie gestört, weil sie ständig und lautlos geschlossen wurde. In einer rein menschlichen Organisation fühlt sich schlechte Wissensverteilung nicht wie ein Problem an — sie fühlt sich wie gewöhnliche Reibung an.
+Dass Unternehmen trotz lückenhafter Dokumentation funktionieren, ist keine Selbstverständlichkeit — es ist eine Dauerleistung, die niemand beauftragt hat. Menschen absorbieren Kultur und Kontext osmotisch: Flurfunk, Beobachtung, Nachahmung. Wo das aufgeschriebene Wissen endet, übernimmt das gelebte. Die Lücke zwischen beidem war immer da; sie hat nur nie jemanden gestört, weil sie ständig und still geschlossen wurde. Schlechte Wissensverteilung fühlt sich in einer rein menschlichen Organisation nicht wie ein Problem an — sie fühlt sich wie normale Reibung an.
 
-**Agenten beenden dieses Schweigen.** Nicht weil sie schlechter wären, sondern weil ihnen genau ein Lernkanal fehlt: der osmotische. Ein Agent arbeitet ausschließlich mit dem, was aufgezeichnet wurde. Er kann nicht spüren, dass eine Anweisung veraltet ist, wenn alle um ihn herum längst aufgehört haben, ihr zu folgen. **Er füllt die Lücke nicht — er arbeitet genau hinein.** Und liefert dann Ergebnisse, die formal korrekt und trotzdem falsch sind: treu dem Buchstaben der Firma, nicht ihrer Praxis.
+**Agents beenden diese Stille.** Nicht weil sie schlechter wären, sondern weil ihnen genau ein Lernkanal fehlt: der osmotische. Ein Agent arbeitet ausschließlich mit dem, was aufgezeichnet ist. Er kann nicht spüren, dass eine Anweisung veraltet ist, wenn alle um ihn herum sie längst ignorieren. **Er füllt die Lücke nicht — er arbeitet hinein.** Und liefert dann Ergebnisse, die formal korrekt sind und trotzdem falsch: nach dem Buchstaben des Unternehmens, nicht nach seiner Praxis.
 
-An diesem Punkt kippt etwas. Die Disziplin, Wissen gut zu verteilen, war schon immer wichtig — sie sah nur nie geschäftskritisch aus, weil ihre Lücken von Menschen aufgefangen wurden. Dieses Sicherheitsnetz gibt es für Agenten nicht. Jede Lücke, die früher lautlos ausgeglichen wurde, zeigt sich jetzt als Fehlschlag. Man kann das als Bedrohung lesen. Ich lese es anders: Wir haben zum ersten Mal ein Instrument, das uns zeigt, wo unser Wissen nur in Köpfen lebt. **Der Agent ist der erste ehrliche Prüfer unserer Wissensverteilung** — wir müssen ihm nur zuhören. Wie das aussehen kann, ist der Rest dieses Texts.
+Damit kippt etwas. Die Disziplin, Wissen sauber zu verteilen, war schon immer wichtig — sie war nur nie sichtbar geschäftskritisch, weil ihre Versäumnisse von Menschen aufgefangen wurden. Dieses Auffangnetz gilt für Agents nicht. Jede Lücke, die bisher still kompensiert wurde, wird jetzt als Fehlleistung sichtbar. Man kann das als Bedrohung lesen. Ich lese es anders: Zum ersten Mal haben wir ein Instrument, das uns zeigt, *wo* unser Wissen nur in den Köpfen lebt. **Der Agent ist der erste ehrliche Auditor unserer Wissensverteilung** — man muss ihm nur zuhören. Wie das konkret aussehen kann, ist der Rest dieses Textes.
 
 ## Das Format
 
-Wenn Agenten nur mit aufgezeichnetem Wissen arbeiten können, scheint die Antwort naheliegend: mehr dokumentieren. Sie ist trotzdem falsch — oder zumindest unvollständig. Klassische Dokumentation hält fest, *was gilt*: den Prozess, die Regel, den Zielzustand. Genau das ist das Format, das am schlechtesten altert. Eine Regel sagt dir nicht, wann sie nicht mehr passt. Sie sagt dir nicht, welches Problem sie einmal gelöst hat, oder ob dieses Problem noch existiert. Sie steht einfach da, mit derselben Autorität am ersten Tag wie an dem Tag, an dem alle längst gelernt haben, sie zu umgehen.
+Wenn Agents nur mit aufgezeichnetem Wissen arbeiten können, liegt die Antwort scheinbar auf der Hand: mehr dokumentieren. Sie ist trotzdem falsch — oder zumindest unvollständig. Klassische Dokumentation hält fest, *was gilt*: den Prozess, die Regel, den Sollzustand. Genau dieses Format altert am schlechtesten. Eine Regel sagt nicht, wann sie nicht mehr passt. Sie sagt nicht, welches Problem sie einmal gelöst hat und ob es dieses Problem noch gibt. Sie steht einfach da, mit derselben Autorität am ersten Tag wie am Tag, an dem alle sie längst umgehen.
 
-Was fehlt, ist das Warum. Ein Mensch, der auf eine fragwürdige Regel stößt, fragt jemanden, der dabei war — und bekommt eine Geschichte: worum es damals ging, was auf dem Spiel stand, was verworfen wurde. Daraus kann er ableiten, ob die Regel noch auf seinen Fall passt. Ein Agent kann nicht fragen. Wenn das Warum nicht aufgezeichnet ist, existiert es für ihn nicht.
+Was fehlt, ist das Warum. Ein Mensch, der auf eine fragwürdige Regel stößt, fragt jemanden, der dabei war — und bekommt eine Geschichte: worum es damals ging, was auf dem Spiel stand, was man verworfen hat. Aus dieser Geschichte kann er ableiten, ob die Regel seinen Fall noch meint. Ein Agent kann nicht nachfragen. Wenn das Warum nicht aufgezeichnet ist, existiert es für ihn nicht.
 
-Deshalb glaube ich: **Das haltbarste Wissensformat ist nicht der beschriebene Zustand, sondern die aufgezeichnete Entscheidung.** Eine Entscheidung, die es wert ist, festgehalten zu werden, trägt vier Dinge:
+Deshalb glaube ich: **Das tragfähigste Wissensformat ist nicht der beschriebene Zustand, sondern die festgehaltene Entscheidung.** Eine Entscheidung, die es wert ist, festgehalten zu werden, trägt vier Dinge:
 
-- **was** entschieden wurde,
+- was **entschieden** wurde,
 - in welchem **Kontext**,
 - aus welchem **Grund**,
 - und was dabei **verworfen** wurde.
 
-Aus Entscheidungen mit Kontext lässt sich ableiten, wie mit der nächsten, noch nie dagewesenen Situation umzugehen ist. Aus Regeln lässt sich nur ableiten, ob man ihnen folgt oder sie bricht.
+Aus Entscheidungen mit Kontext lässt sich ableiten, wie die nächste, noch nie dagewesene Situation zu behandeln ist. Aus Regeln lässt sich nur ableiten, ob man sie befolgt oder bricht.
 
-Das ist kein Zugeständnis an die Maschinen. Die häufigste Frage neuer Kolleg:innen ist nicht „Wie ist der Prozess?" — diese Antwort lässt sich finden. Sie lautet „Warum machen wir das so?" — diese Antwort lässt sich meist nicht finden. Eine Firma, die ihre Entscheidungen mit Kontext festhält, beantwortet beides aus derselben Quelle. Für mich ist das der Kern der Symbiose: kein zweites Wissenssystem für Agenten neben dem für Menschen, sondern ein Format, das beides trägt.
+Das ist kein Zugeständnis an die Maschinen. Die häufigste Frage neuer Kolleginnen und Kollegen ist nicht „was ist der Prozess?" — die Antwort findet man. Es ist „warum machen wir das so?" — die Antwort findet man meistens nicht. Ein Unternehmen, das seine Entscheidungen mit Kontext festhält, beantwortet beiden dieselbe Frage aus derselben Quelle. Das ist für mich der Kern der Symbiose: kein zweites Wissenssystem für Agents neben dem für Menschen, sondern ein Format, das für beide trägt.
 
 ## Die Lücke
 
-Aber selbst das beste Format löst nur die halbe Aufgabe. Ein Teil der Firma wurde nie entschieden — er wird nur gelebt. Dass man diesen einen Kunden freitags nie anruft. Dass „Review" in diesem Team etwas anderes bedeutet als im Nachbarteam. Niemand hat das je verordnet, also ist es nie durch eine Entscheidung gegangen, also steht es auch im besten Entscheidungsarchiv nicht. Für Menschen ist das kein Problem — genau das ist das Wissen, das sie osmotisch aufnehmen. Für Agenten bleibt es unerreichbar, egal wie diszipliniert dokumentiert wird.
+Aber auch das beste Format löst das Problem nur zur Hälfte. Ein Teil des Unternehmens wurde nämlich nie entschieden — er wird nur gelebt. Dass man den einen Kunden nie freitags anruft. Dass „Review" in diesem Team etwas anderes bedeutet als im Nachbarteam. Niemand hat das beschlossen, also ist es durch keine Entscheidung gegangen, also steht es in keinem noch so guten Entscheidungsarchiv. Für Menschen ist das kein Problem — genau dieses Wissen ist es, das sie osmotisch aufnehmen. Für Agents ist es unerreichbar, egal wie diszipliniert dokumentiert wird.
 
-Und hier wird der Zusammenprall nützlich. Jede Korrektur, jedes „so machen wir das hier nicht", ist ein **punktgenauer Beleg**: Genau an dieser Stelle weicht gelebte Praxis von aufgezeichnetem Wissen ab — präziser verortet, als es jedes Audit, jeder Workshop, jede Interviewreihe je könnte. Niemand musste es erheben. Es ist einfach passiert, mitten in der Arbeit, genau dort, wo die Lücke tatsächlich liegt — nicht dort, wo ein Fragebogen sie vermutet hätte.
+Und hier wird der Zusammenprall nützlich. Jede Korrektur, jedes „so machen wir das hier nicht", ist ein **punktgenauer Beleg**: An dieser Stelle weicht die gelebte Praxis vom aufgezeichneten Wissen ab — präziser verortet, als es je ein Audit, ein Workshop oder eine Interviewreihe könnte. Das musste niemand erheben. Es ist einfach passiert, mitten in der Arbeit, genau dort, wo die Lücke tatsächlich liegt — nicht dort, wo ein Fragebogen sie vermutet hätte.
 
-Der Agent ist damit mehr als ein Konsument von Firmenwissen. Er ist ein Detektor für undokumentierte Praxis — das Instrument, das unser Prüfer aus dem vorigen Abschnitt braucht. Aber ein Detektor, den niemand liest, ist nur eine Belästigung: Die Korrektur verflüchtigt sich in einer Chat-Historie, und dieselbe Lücke wird nächste Woche erneut korrigiert, von jemand anderem, Wort für Wort. Was fehlt, ist der Ort, an dem diese Befunde ankommen.
+Der Agent ist damit mehr als ein Konsument des Unternehmenswissens. Er ist ein Detektor für undokumentierte Praxis — das Instrument, das der Auditor aus dem vorigen Abschnitt braucht. Aber ein Detektor, den niemand abliest, ist nur ein Ärgernis: Die Korrektur verpufft im Chatverlauf, und dieselbe Lücke wird nächste Woche wieder korrigiert, von jemand anderem, wortgleich. Was fehlt, ist der Ort, an dem diese Funde ankommen.
 
-## Die Meldestelle
+## Der Intake
 
-Dieser Ort muss nicht kompliziert sein — aber er muss bewusst gestaltet sein. Das Muster, das ich für tragfähig halte: **ein Kanal, in dem Menschen festhalten, wenn Agenten-Output und gelebte Praxis auseinanderfallen.** Wer korrigiert, notiert kurz:
+Dieser Ort muss nicht kompliziert sein — aber er muss bewusst sein. Das Muster, das ich für tragfähig halte: **ein Kanal, in dem Menschen festhalten, wenn Agent-Output und gelebte Praxis auseinanderlaufen.** Wer korrigiert, notiert kurz:
 
-- was er oder sie **erwartet** hat,
-- was er oder sie **bekommen** hat,
+- was **erwartet** wurde,
+- was stattdessen **bekommen** wurde,
 - und worin der **Unterschied** liegt.
 
-Freiwillig, informell, im Moment der Arbeit.
+Freiwillig, formlos, im Moment der Arbeit.
 
-Das Wort „freiwillig" ist hier keine Nettigkeit — es ist der Kern. Die naheliegende Versuchung liegt auf der Hand: Die Korrekturen stehen doch ohnehin schon in den Agenten-Logs — warum sie nicht einfach automatisch auswerten? Weil das einen Meldekanal in ein Überwachungsinstrument verwandelt. Menschen, die wissen, dass jede Interaktion bewertet wird, korrigieren anders: defensiver, seltener, formaler. Die feinen Nuancen — genau das, worum es hier geht — verschwinden zuerst. Die Meldung muss ein bewusster Akt bleiben: Die Person entscheidet, dass dieser Unterschied wichtig ist und geteilt werden sollte. Die Luftfahrt zeigt seit Jahrzehnten mit ihren freiwilligen, sanktionsfreien Meldesystemen, dass genau diese Bedingungen darüber entscheiden, ob Menschen die heiklen Dinge überhaupt sichtbar machen.
+Das Wort „freiwillig" ist dabei keine Nettigkeit, sondern der Kern. Die verführerische Alternative liegt auf der Hand: Die Korrekturen stehen doch ohnehin in den Agent-Logs — warum nicht automatisch auswerten? Weil damit aus einem Meldekanal ein Kontrollinstrument wird. Wer weiß, dass jede Interaktion ausgewertet wird, korrigiert anders: defensiver, seltener, formeller. Genau die feinen Nuancen, um die es geht, verschwinden zuerst. Die Meldung muss ein bewusster Akt bleiben — die Person entscheidet, dass diese Differenz zählt und geteilt wird. Die Luftfahrt macht mit ihren freiwilligen, sanktionsfreien Meldesystemen seit Jahrzehnten vor, dass genau diese Bedingungen darüber entscheiden, ob Menschen das Heikle überhaupt preisgeben.
 
-Der zweite Schritt ist Kuratierung. Einzelne Meldungen sind Anekdoten; erst gesichtet und verdichtet werden sie zu Wissen. Und hier schließt sich der Kreis zurück zum Format: Kuratieren heißt, die aufgedeckte Lücke zu *entscheiden*.
+Der zweite Schritt ist Kuration. Einzelne Meldungen sind Anekdoten; erst gesichtet und verdichtet werden sie zu Wissen. Und hier schließt sich der Kreis zum Format: Kuration heißt, die aufgedeckte Lücke zu *entscheiden*.
 
 - Entweder die gelebte Praxis wird **übernommen** — jetzt aufgezeichnet, mit ihrem Warum.
-- Oder man kommt zu dem Schluss, dass sie **nicht gelten soll** — was ebenfalls eine Entscheidung ist, ebenfalls mit einem Warum.
+- Oder man stellt fest, dass sie so **nicht gelten soll** — auch das eine Entscheidung, auch die mit einem Warum.
 
-In beiden Fällen ist etwas passiert, das vorher nie passiert ist: Diese Praxis wurde zum ersten Mal bewusst entschieden. Gelebte Kultur fließt in aufgezeichnetes Wissen — nicht durch Überwachung, sondern dadurch, dass Menschen entscheiden, was zählt.
+In beiden Fällen ist etwas passiert, das vorher nie passiert ist: Über diese Praxis wurde zum ersten Mal bewusst entschieden. Gelebte Kultur fließt ins aufgezeichnete Wissen — nicht durch Überwachung, sondern durch Menschen, die entscheiden, was zählt.
 
 ## Der Fixpunkt
 
-Eine letzte Sorge bleibt. Wenn Agenten zunehmend aus einem wachsenden Entscheidungsarchiv ableiten — was hindert das System daran, langsam vom Kurs abzudriften? Navigation ohne externe Referenz hat ein bekanntes Problem: Kleine Fehler summieren sich. Ein Agent, der eine alte Entscheidung leicht falsch liest, trifft die nächste auf dieser Grundlage; die kommt ins Archiv; die übernächste baut auf beiden auf. Kein einzelner Schritt ist auffällig falsch. Hundert Runden später ist das System weit vom Kurs abgekommen — und niemand hat es bemerkt, weil es nur seine eigene Karte kennt.
+Bleibt eine letzte Sorge. Wenn Agents zunehmend aus dem wachsenden Entscheidungsarchiv ableiten — was hindert das System daran, langsam wegzudriften? Navigation ohne externe Referenz hat ein bekanntes Problem: Kleine Fehler akkumulieren. Ein Agent, der eine alte Entscheidung leicht fehlinterpretiert, trifft auf dieser Basis die nächste; die wird wieder Teil des Archivs; die übernächste baut auf beiden auf. Kein einzelner Schritt ist auffällig falsch. Nach hundert Schleifen ist das System weit vom Kurs entfernt — und hat es nirgends gemerkt, weil es nur die eigene Karte kennt.
 
-Der Fixpunkt ist derselbe Mechanismus wie die Meldestelle: die menschliche Korrektur. Jedes „so machen wir das hier nicht" ist nicht nur ein Befund für die Wissensverteilung — es ist eine Standortbestimmung von außen, ein Abgleich zwischen der Karte des Systems und dem tatsächlichen Gelände. Deshalb ist „Menschen im Zentrum" in diesem Modell keine Beruhigungsformel für die Belegschaft. **Es ist Architektur.** Eine Firma, die ihre Agenten nur aus der eigenen Historie ableiten lässt, navigiert blind nach Koppelnavigation. Die Symbiose ist keine nostalgische Zwischenstufe auf dem Weg zur vollautomatisierten Organisation — sie ist die Bedingung dafür, dass das System auf Kurs bleibt.
+Der Fixpunkt ist derselbe Mechanismus wie der Intake: die menschliche Korrektur. Jedes „so machen wir das hier nicht" ist nicht nur ein Fund für die Wissensverteilung — es ist eine Standortbestimmung von außen, ein Abgleich zwischen der Karte des Systems und dem Gelände. Deshalb ist „der Mensch im Mittelpunkt" in diesem Modell keine Beruhigungsformel für die Belegschaft. **Es ist Architektur.** Ein Unternehmen, das seine Agenten nur noch aus der eigenen Geschichte ableiten lässt, navigiert blind nach Koppelkurs. Die Symbiose ist nicht der nostalgische Zwischenschritt auf dem Weg zur menschenleeren Organisation — sie ist die Bedingung dafür, dass das System auf Kurs bleibt.
 
-## Was offenbleibt
+## Was offen bleibt
 
-Zwei Dinge möchte ich nicht beschönigen.
+Zwei Dinge will ich nicht verschweigen.
 
-- **Der Detektor sieht nur dort, wo Arbeit stattfindet.** Praxis, die nie mit einem Agenten in Berührung kommt, bleibt so unsichtbar wie eh und je — dieses Modell verkleinert die Lücke, es vervollständigt nicht die Karte.
-- **Wie die Meldestelle in der Praxis aussieht** — wer kuratiert, in welchem Rhythmus, in welcher Form — habe ich bewusst offengelassen. Nicht aus Vermeidung, sondern weil ich glaube, dass die Antwort von Organisation zu Organisation unterschiedlich ausfällt.
+- **Der Detektor sieht nur dort, wo Arbeit stattfindet.** Praxis, die nie mit einem Agenten in Berührung kommt, bleibt so unsichtbar wie eh und je — dieses Modell macht die Lücke kleiner, nicht die Landkarte vollständig.
+- **Wie der Intake konkret aussieht** — wer kuratiert, in welchem Rhythmus, in welcher Form — habe ich bewusst offengelassen. Nicht aus Verlegenheit, sondern weil ich glaube, dass die Antwort je Organisation anders ausfällt.
 
-Also die Frage zurück an dich: Wo landet die Korrektur in deiner Organisation heute, wenn ein Agent etwas liefert, das formal richtig und praktisch falsch ist? Verflüchtigt sie sich in einer Chat-Historie — oder gibt es schon einen Ort, an dem sie ankommt?
+Deshalb die Frage zurück an euch: Wo landet bei euch heute die Korrektur, wenn ein Agent etwas formal Richtiges und praktisch Falsches liefert? Verpufft sie im Chatverlauf — oder gibt es schon einen Ort, an dem sie ankommt?
