@@ -8,7 +8,7 @@ description: "Marketplaces solve distribution of harness knowledge — publish, 
 tags: [harness-engineering, agentic-engineering]
 ---
 
-> **Hinweis:** Dieser Beitrag ist noch nicht ins Deutsche übersetzt — du liest hier die englische Originalfassung.
+> **Hinweis:** Dieser Beitrag ist noch nicht ins Deutsche übersetzt. Es folgt die englische Originalfassung.
 
 [Birgitta Böckeler's article on harness engineering](https://martinfowler.com/articles/harness-engineering.html) — the practice of wrapping a model in the guides, sensors, and feedback loops that make it a reliable coding agent — leaves one question deliberately open. Harness templates, she notes, could let larger organizations share common guides and sensors — but the moment a team instantiates a template, it starts drifting out of sync. The versioning and contribution problems might be *worse* than with classic service templates, because guides and sensors are not deterministic artifacts. She names the problem and moves on.
 

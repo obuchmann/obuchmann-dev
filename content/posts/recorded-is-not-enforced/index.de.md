@@ -7,7 +7,7 @@ description: "A system of record remembers decisions; a system of work obeys the
 tags: [harness-engineering, agentic-engineering, adr]
 ---
 
-> **Hinweis:** Dieser Beitrag ist noch nicht ins Deutsche übersetzt — du liest hier die englische Originalfassung.
+> **Hinweis:** Dieser Beitrag ist noch nicht ins Deutsche übersetzt. Es folgt die englische Originalfassung.
 
 [OpenAI's account of harness engineering](https://openai.com/index/harness-engineering/) — published in February, already canon — contains a diagram whose caption has become the field's premise: "What Codex can't see doesn't exist." From the agent's point of view, anything outside its running context might as well not have been decided.
 
