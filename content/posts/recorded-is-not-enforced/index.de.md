@@ -7,6 +7,8 @@ description: "A system of record remembers decisions; a system of work obeys the
 tags: [harness-engineering, agentic-engineering, adr]
 ---
 
+> **Hinweis:** Dieser Beitrag ist noch nicht ins Deutsche übersetzt. Es folgt die englische Originalfassung.
+
 [OpenAI's account of harness engineering](https://openai.com/index/harness-engineering/) — published in February, already canon — contains a diagram whose caption has become the field's premise: "What Codex can't see doesn't exist." From the agent's point of view, anything outside its running context might as well not have been decided.
 
 Five months later, the answers to that premise have piled up, and they contradict each other. One vendor, [Mneme](https://mnemehq.com/insights/how-ai-coding-agents-use-adrs/), published a three-rung maturity ladder for architecture decision records — ignored, advisory, enforced — and argued that "an ADR a machine checks is a constraint." [The same vendor's other post](https://mnemehq.com/insights/rule-files-vs-retrieval-memory/) argues the opposite direction: rule files loaded into context don't scale, structured retrieval is the higher form. A consultancy, [TechEmpower, declared that the wiki's future is to be a report](https://www.techempower.com/blog/2026/06/16/what-if-the-repository-replaced-your-wiki-and-agents-maintained-it/) generated from the repository. [A widely shared post declared AGENTS.md the new ADR](https://ai.gopubby.com/agents-md-is-the-ew-architecture-decision-record-adr-3cfb6bdd6f2c), full stop. Thoughtworks put the ["context graph" on its radar](https://www.thoughtworks.com/radar/techniques/context-graph) — decisions and precedents as first-class nodes structured for AI consumption — without connecting it to the lightweight ADRs on the same radar since 2017.
@@ -88,9 +90,3 @@ Readers of [the previous essay]({{< ref "/posts/distribution-is-not-federation" 
 That is the quiet meaning of the convergence. It was never about merging two document types. It is about noticing that the organization already has exactly one kind of thing — decisions — and that the agentic era assigns them a measurable position: recorded is not readable, readable is not projected, projected is not enforced.
 
 The teams that internalize this early will not experience it as convergence at all. They will experience it as the moment when every architecture decision becomes a harness decision.
-
----
-
-*Changelog — this essay has been revised since publication:*
-
-*2026-08-26 — Fixed the link to the previous essay, which broke when the site moved to a bilingual URL structure with `/en/`/`/de/` path prefixes.*

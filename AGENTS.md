@@ -31,3 +31,10 @@ Format (established convention, see `content/posts/distribution-is-not-federatio
 - The changelog section is introduced once (after an `---` separator) and new entries are appended in chronological order.
 - Trivial fixes (typos, broken links) may be summarized, but substantive changes — reworked arguments, new sections, updated sources — must each be named.
 - Drafts (not yet published) need no changelog; edit freely until release.
+
+### 3. German translation conventions
+
+The site is bilingual (English default at `/en/`, German at `/de/`; see README.md § Languages). When writing or reviewing German content:
+
+- **Use "Agents" (the English loanword), not "Agenten."** Singular oblique forms still decline normally in German (e.g. "einem Agenten," "der Agent") — it's specifically the word itself that stays English, not German grammar around it.
+- **Avoid direct address (du/Sie) in German site copy Claude authors** — the general pages (About, Privacy, UI strings, disclaimers, and similar site-chrome text, as opposed to essay content itself). Prefer impersonal phrasing: "Dies ist die englische Originalfassung" rather than "du liest hier die englische Originalfassung"; "was hier zu erwarten ist" rather than "was dich hier erwartet."

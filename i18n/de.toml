@@ -1,0 +1,161 @@
+[language]
+other = "Sprache"
+
+[readingTimeMinute]
+other = "{{ .Count }} Min. Lesezeit"
+
+[updated]
+other = "aktualisiert"
+
+[disclosure]
+other = "Konzept und redaktionelle Endfassung stammen von mir — für Recherche und Entwurf kamen KI-Agenten zum Einsatz."
+
+[notFoundTitle]
+other = "Diese Seite gibt es nicht."
+
+[backToHome]
+other = "Zurück zur Startseite"
+
+[impressum]
+other = "Impressum"
+
+[privacy]
+other = "Datenschutz"
+
+[rss]
+other = "RSS"
+
+[adrsimTeamA]
+other = "Team A"
+
+[adrsimPublishingNode]
+other = "veröffentlichender Knoten"
+
+[adrsimReflectionLog]
+other = "Reflexions-Log"
+
+[adrsimNoEntries]
+other = "noch keine Einträge"
+
+[adrsimTeamForum]
+other = "Team-Forum"
+
+[adrsimConsolidatesAtRetro]
+other = "konsolidiert beim Retro"
+
+[adrsimTeamHarnessA]
+other = "Team-Harness A"
+
+[adrsimNoAdrsYet]
+other = "noch keine ADRs"
+
+[adrsimExchange]
+other = "Exchange"
+
+[adrsimDecisionTravels]
+other = "die Entscheidung reist"
+
+[adrsimPublishedAdrs]
+other = "Veröffentlichte ADRs"
+
+[adrsimEmptyShelf]
+other = "leeres Regal"
+
+[adrsimTeamB]
+other = "Team B"
+
+[adrsimReceivingNode]
+other = "empfangender Knoten"
+
+[adrsimTeamHarnessB]
+other = "Team-Harness B"
+
+[adrsimOwnCompleteHarness]
+other = "sein eigenes vollständiges Harness"
+
+[adrsimDerivedDiff]
+other = "Abgeleiteter Diff — kuratieren"
+
+[adrsimKeep]
+other = "Übernehmen"
+
+[adrsimAdapt]
+other = "Anpassen"
+
+[adrsimDiscard]
+other = "Verwerfen"
+
+[adrsimStep1]
+other = "1· Reflektieren"
+
+[adrsimStep2]
+other = "2· Konsolidieren"
+
+[adrsimStep3]
+other = "3· Veröffentlichen"
+
+[adrsimStep4]
+other = "4· Übernehmen"
+
+[adrsimReset]
+other = "Zurücksetzen"
+
+[adrsimFinding1Friction]
+other = "Agent hat eine Modulgrenze überschritten — kein Sensor hat ausgelöst"
+
+[adrsimFinding1Title]
+other = "Boundary-Sensor im Pre-Commit ergänzen"
+
+[adrsimFinding2Friction]
+other = "Volle Dateien einzulesen hat wiederholt das Kontextfenster gesprengt"
+
+[adrsimFinding2Title]
+other = "Guide: Abschnitte lesen, nicht ganze Dateien"
+
+[adrsimFinding3Friction]
+other = "Ein flakiger Integrationstest hat den Agenten in eine Retry-Schleife geschickt"
+
+[adrsimFinding3Title]
+other = "Flakige Tests vor Agent-Läufen unter Quarantäne stellen"
+
+[adrsimIntroCaption]
+other = "Eine Federation-Runde: ein Finding wandert von der Session-Reibung eines Teams in das Harness eines anderen Teams — als Entscheidung, nicht als Artefakt. Start mit Reflektieren."
+
+[adrsimReflectCaption]
+other = "Session-Reibung landet im Reflexions-Log des Repos — sie reist mit dem Feature-PR nach main. Beim Retro übernimmt das Forum."
+
+[adrsimConsolidateCaption]
+other = "Menschliches Urteil im Forum macht aus dem Finding {{ .adrId }}: was sich ändert, warum, mit welcher Evidenz, unter welchen Anwendbarkeitsbedingungen."
+
+[adrsimPublishCaption]
+other = "{{ .adrId }} ist auf dem Exchange. Die Entscheidung reist, nicht das Artefakt — keine Harness-Datei wurde verschoben."
+
+[adrsimAdoptCaption]
+other = "Team B leitet aus {{ .adrId }} seinen eigenen Harness-Diff ab — die Projektion passiert auf Empfängerseite, im Kontext von Team B. Jetzt kuratieren: übernehmen, anpassen oder verwerfen."
+
+[adrsimKeepLabel]
+other = "Fast-Forward"
+
+[adrsimKeepText]
+other = "Fast-Forward: Die Entscheidung passt sauber, Team B protokolliert die Übernahme. Schleife geschlossen."
+
+[adrsimAdaptLabel]
+other = "Trim-Merge"
+
+[adrsimAdaptText]
+other = "Trim-Merge: Team B passt die Entscheidung lokal an und protokolliert ein Trim-ADR — eine bewusste, dokumentierte Abweichung. Schleife geschlossen."
+
+[adrsimDiscardLabel]
+other = "verworfen, dokumentiert"
+
+[adrsimDiscardText]
+other = "Verworfen — und im eigenen ADR von Team B protokolliert. Dokumentierte Abweichung ist kein Drift. Schleife geschlossen."
+
+[adrsimReplayNote]
+other = "Alle drei Findings sind gewandert — zurücksetzen, um es erneut zu erleben."
+
+[adrsimEvidenceTag]
+other = "Evidenz: Reflexions-Log · gilt für: modularer Monolith"
+
+[adrsimFromTeamATag]
+other = "von Team A · modularer Monolith"

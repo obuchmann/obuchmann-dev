@@ -1,0 +1,6 @@
+<nav class="lang-switch" aria-label="{{ i18n "language" }}">
+  {{ range partial "lang-targets.html" . }}
+    {{ if .current }}<span class="lang-current" aria-current="true">{{ .lang | upper }}</span>
+    {{ else }}<a class="lang-link" href="{{ .url }}" hreflang="{{ .lang }}">{{ .lang | upper }}</a>{{ end }}
+  {{ end }}
+</nav>

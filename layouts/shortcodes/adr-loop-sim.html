@@ -1,8 +1,12 @@
 {{- /* Interactive ADR-loop simulation. Params: fallback (image in page bundle for noscript), alt */ -}}
 {{- $fallback := .Get "fallback" -}}
 {{- $alt := .Get "alt" | default "The ADR loop" -}}
+{{- $fallbackURL := $fallback -}}
+{{- with .Page.Resources.GetMatch $fallback -}}
+  {{- $fallbackURL = .RelPermalink -}}
+{{- end -}}
 <noscript>
-  {{ if $fallback }}<img src="{{ $fallback }}" alt="{{ $alt }}">{{ end }}
+  {{ if $fallback }}<img src="{{ $fallbackURL }}" alt="{{ $alt }}">{{ end }}
 </noscript>
 
 <style>
@@ -164,56 +168,106 @@
 }
 </style>
 
+<script type="application/json" id="adrsim-i18n">
+{{ dict
+  "teamA" (i18n "adrsimTeamA")
+  "publishingNode" (i18n "adrsimPublishingNode")
+  "reflectionLog" (i18n "adrsimReflectionLog")
+  "noEntries" (i18n "adrsimNoEntries")
+  "teamForum" (i18n "adrsimTeamForum")
+  "consolidatesAtRetro" (i18n "adrsimConsolidatesAtRetro")
+  "teamHarnessA" (i18n "adrsimTeamHarnessA")
+  "noAdrsYet" (i18n "adrsimNoAdrsYet")
+  "exchange" (i18n "adrsimExchange")
+  "decisionTravels" (i18n "adrsimDecisionTravels")
+  "publishedAdrs" (i18n "adrsimPublishedAdrs")
+  "emptyShelf" (i18n "adrsimEmptyShelf")
+  "teamB" (i18n "adrsimTeamB")
+  "receivingNode" (i18n "adrsimReceivingNode")
+  "teamHarnessB" (i18n "adrsimTeamHarnessB")
+  "ownCompleteHarness" (i18n "adrsimOwnCompleteHarness")
+  "derivedDiff" (i18n "adrsimDerivedDiff")
+  "keep" (i18n "adrsimKeep")
+  "adapt" (i18n "adrsimAdapt")
+  "discard" (i18n "adrsimDiscard")
+  "step1" (i18n "adrsimStep1")
+  "step2" (i18n "adrsimStep2")
+  "step3" (i18n "adrsimStep3")
+  "step4" (i18n "adrsimStep4")
+  "reset" (i18n "adrsimReset")
+  "finding1Friction" (i18n "adrsimFinding1Friction")
+  "finding1Title" (i18n "adrsimFinding1Title")
+  "finding2Friction" (i18n "adrsimFinding2Friction")
+  "finding2Title" (i18n "adrsimFinding2Title")
+  "finding3Friction" (i18n "adrsimFinding3Friction")
+  "finding3Title" (i18n "adrsimFinding3Title")
+  "introCaption" (i18n "adrsimIntroCaption")
+  "reflectCaption" (i18n "adrsimReflectCaption")
+  "consolidateCaption" (i18n "adrsimConsolidateCaption" (dict "adrId" "{ADR_ID}"))
+  "publishCaption" (i18n "adrsimPublishCaption" (dict "adrId" "{ADR_ID}"))
+  "adoptCaption" (i18n "adrsimAdoptCaption" (dict "adrId" "{ADR_ID}"))
+  "keepLabel" (i18n "adrsimKeepLabel")
+  "keepText" (i18n "adrsimKeepText")
+  "adaptLabel" (i18n "adrsimAdaptLabel")
+  "adaptText" (i18n "adrsimAdaptText")
+  "discardLabel" (i18n "adrsimDiscardLabel")
+  "discardText" (i18n "adrsimDiscardText")
+  "replayNote" (i18n "adrsimReplayNote")
+  "evidenceTag" (i18n "adrsimEvidenceTag")
+  "fromTeamATag" (i18n "adrsimFromTeamATag")
+}}
+</script>
+
 <div class="adrsim" id="adrsim" hidden>
   <div class="adrsim-stage" id="adrsim-stage">
     <div class="adrsim-col">
-      <h4>Team A <small>publishing node</small></h4>
+      <h4>{{ i18n "adrsimTeamA" }} <small>{{ i18n "adrsimPublishingNode" }}</small></h4>
       <div class="adrsim-box adrsim-gray" id="adrsim-log">
-        <span class="adrsim-box-title">Reflection log</span>
-        <ul id="adrsim-log-list" data-empty="no entries yet"></ul>
+        <span class="adrsim-box-title">{{ i18n "adrsimReflectionLog" }}</span>
+        <ul id="adrsim-log-list" data-empty="{{ i18n "adrsimNoEntries" }}"></ul>
       </div>
       <div class="adrsim-flow-arrow" aria-hidden="true">&#8595;</div>
       <div class="adrsim-box adrsim-purple" id="adrsim-forum">
-        <span class="adrsim-box-title">Team forum</span>
-        <span>consolidates at the retro</span>
+        <span class="adrsim-box-title">{{ i18n "adrsimTeamForum" }}</span>
+        <span>{{ i18n "adrsimConsolidatesAtRetro" }}</span>
       </div>
       <div class="adrsim-flow-arrow" aria-hidden="true">&#8595;</div>
       <div class="adrsim-box adrsim-teal" id="adrsim-harness-a">
-        <span class="adrsim-box-title">Team harness A</span>
-        <ul id="adrsim-adr-a" data-empty="no ADRs yet"></ul>
+        <span class="adrsim-box-title">{{ i18n "adrsimTeamHarnessA" }}</span>
+        <ul id="adrsim-adr-a" data-empty="{{ i18n "adrsimNoAdrsYet" }}"></ul>
       </div>
     </div>
     <div class="adrsim-col">
-      <h4>Exchange <small>the decision travels</small></h4>
+      <h4>{{ i18n "adrsimExchange" }} <small>{{ i18n "adrsimDecisionTravels" }}</small></h4>
       <div class="adrsim-box adrsim-teal" id="adrsim-exchange">
-        <span class="adrsim-box-title">Published ADRs</span>
-        <ul id="adrsim-adr-x" data-empty="empty shelf"></ul>
+        <span class="adrsim-box-title">{{ i18n "adrsimPublishedAdrs" }}</span>
+        <ul id="adrsim-adr-x" data-empty="{{ i18n "adrsimEmptyShelf" }}"></ul>
       </div>
     </div>
     <div class="adrsim-col">
-      <h4>Team B <small>receiving node</small></h4>
+      <h4>{{ i18n "adrsimTeamB" }} <small>{{ i18n "adrsimReceivingNode" }}</small></h4>
       <div class="adrsim-box adrsim-teal" id="adrsim-harness-b">
-        <span class="adrsim-box-title">Team harness B</span>
-        <ul id="adrsim-adr-b" data-empty="its own complete harness"></ul>
+        <span class="adrsim-box-title">{{ i18n "adrsimTeamHarnessB" }}</span>
+        <ul id="adrsim-adr-b" data-empty="{{ i18n "adrsimOwnCompleteHarness" }}"></ul>
       </div>
       <div class="adrsim-decision" id="adrsim-decision" hidden>
-        <span class="adrsim-box-title">Derived diff — curate it</span>
+        <span class="adrsim-box-title">{{ i18n "adrsimDerivedDiff" }}</span>
         <div class="adrsim-diff" id="adrsim-diff"></div>
         <div class="adrsim-decision-buttons">
-          <button type="button" id="adrsim-keep">Keep</button>
-          <button type="button" id="adrsim-adapt">Adapt</button>
-          <button type="button" id="adrsim-discard">Discard</button>
+          <button type="button" id="adrsim-keep">{{ i18n "adrsimKeep" }}</button>
+          <button type="button" id="adrsim-adapt">{{ i18n "adrsimAdapt" }}</button>
+          <button type="button" id="adrsim-discard">{{ i18n "adrsimDiscard" }}</button>
         </div>
       </div>
     </div>
     <div class="adrsim-dot" id="adrsim-dot" hidden></div>
   </div>
   <div class="adrsim-controls">
-    <button type="button" id="adrsim-reflect">1&#183; Reflect</button>
-    <button type="button" id="adrsim-consolidate">2&#183; Consolidate</button>
-    <button type="button" id="adrsim-publish">3&#183; Publish</button>
-    <button type="button" id="adrsim-adopt">4&#183; Adopt</button>
-    <button type="button" class="adrsim-reset" id="adrsim-reset">Reset</button>
+    <button type="button" id="adrsim-reflect">{{ i18n "adrsimStep1" }}</button>
+    <button type="button" id="adrsim-consolidate">{{ i18n "adrsimStep2" }}</button>
+    <button type="button" id="adrsim-publish">{{ i18n "adrsimStep3" }}</button>
+    <button type="button" id="adrsim-adopt">{{ i18n "adrsimStep4" }}</button>
+    <button type="button" class="adrsim-reset" id="adrsim-reset">{{ i18n "adrsimReset" }}</button>
   </div>
   <p class="adrsim-caption" id="adrsim-caption" aria-live="polite"></p>
 </div>
@@ -224,20 +278,22 @@
   if (!root) return;
   root.hidden = false;
 
+  var T = JSON.parse(document.getElementById('adrsim-i18n').textContent);
+
   var FINDINGS = [
     {
-      friction: 'Agent crossed a module boundary — no sensor fired',
-      title: 'Add a boundary sensor to pre-commit',
+      friction: T.finding1Friction,
+      title: T.finding1Title,
       diff: '+ sensors/boundary-check.yml\n+ AGENTS.md: module import rules'
     },
     {
-      friction: 'Full-file reads kept overflowing the context window',
-      title: 'Guide: read sections, not files',
+      friction: T.finding2Friction,
+      title: T.finding2Title,
       diff: '+ guides/context-budget.md\n~ AGENTS.md: partial-read rule'
     },
     {
-      friction: 'A flaky integration test sent the agent into a retry loop',
-      title: 'Quarantine flaky tests before agent runs',
+      friction: T.finding3Friction,
+      title: T.finding3Title,
       diff: '+ sensors/flaky-quarantine.yml\n~ ci/agent-pipeline.yml'
     }
   ];
@@ -258,11 +314,13 @@
     state = { round: 0, phase: 'idle', pending: null };
     logList.innerHTML = adrA.innerHTML = adrX.innerHTML = adrB.innerHTML = '';
     decision.hidden = true;
-    say('A federation round trip: a finding travels from one team’s session friction into another team’s harness — as a decision, not an artifact. Start with Reflect.');
+    say(T.introCaption);
     update();
   }
 
   function say(text) { caption.textContent = text; }
+
+  function withAdrId(template) { return template.split('{ADR_ID}').join(adrId()); }
 
   function adrId() { return 'ADR-00' + (state.round + 1); }
 
@@ -283,7 +341,7 @@
       btns[k].classList.toggle('adrsim-next', k === next);
     });
     if (state.phase === 'done' && state.round >= FINDINGS.length) {
-      say(caption.textContent + ' All three findings have traveled — reset to replay.');
+      say(caption.textContent + ' ' + T.replayNote);
     } else if (state.phase === 'done') {
       btns.reflect.disabled = false;
       btns.reflect.classList.add('adrsim-next');
@@ -326,7 +384,7 @@
     state.pending = f;
     addItem(logList, f.friction);
     state.phase = 'reflected';
-    say('Session friction lands in the repo’s reflection log — it rides to main with the feature PR. At the retro, the forum takes over.');
+    say(T.reflectCaption);
     update();
   });
 
@@ -336,9 +394,9 @@
       travel(el('forum'), el('harness-a'), function () {
         logList.innerHTML = '';
         addItem(adrA, '<strong>' + adrId() + '</strong> ' + state.pending.title +
-          '<br><span class="adrsim-tag">evidence: reflection log · applies to: modular monolith</span>');
+          '<br><span class="adrsim-tag">' + T.evidenceTag + '</span>');
         state.phase = 'consolidated';
-        say('Human judgment at the forum turns the finding into ' + adrId() + ': what changed, why, with what evidence, under which applicability conditions.');
+        say(withAdrId(T.consolidateCaption));
         update();
       });
     });
@@ -348,9 +406,9 @@
     lock();
     travel(el('harness-a'), el('exchange'), function () {
       addItem(adrX, '<strong>' + adrId() + '</strong> ' + state.pending.title +
-        '<br><span class="adrsim-tag">from Team A · modular monolith</span>');
+        '<br><span class="adrsim-tag">' + T.fromTeamATag + '</span>');
       state.phase = 'published';
-      say(adrId() + ' is on the exchange. The decision travels, not the artifact — no harness files moved.');
+      say(withAdrId(T.publishCaption));
       update();
     });
   });
@@ -361,7 +419,7 @@
       diffBox.textContent = state.pending.diff;
       decision.hidden = false;
       state.phase = 'adopting';
-      say('Team B derives its own harness diff from ' + adrId() + ' — projection happens at the receiving end, in Team B’s context. Now curate: keep, adapt, or discard.');
+      say(withAdrId(T.adoptCaption));
     });
   });
 
@@ -375,13 +433,13 @@
   }
 
   btns.keep.addEventListener('click', function () {
-    decide('✓', 'fast-forward', 'Fast-forward: the decision applies cleanly, Team B records the adoption. Loop closed.');
+    decide('✓', T.keepLabel, T.keepText);
   });
   btns.adapt.addEventListener('click', function () {
-    decide('✂', 'trim-merge', 'Trim-merge: Team B adapts the decision locally and records a trim ADR — a deliberate, documented divergence. Loop closed.');
+    decide('✂', T.adaptLabel, T.adaptText);
   });
   btns.discard.addEventListener('click', function () {
-    decide('✗', 'discarded, documented', 'Discarded — and recorded in Team B’s own ADR. Documented divergence is not drift. Loop closed.');
+    decide('✗', T.discardLabel, T.discardText);
   });
 
   btns.reset.addEventListener('click', reset);
