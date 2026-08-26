@@ -2,10 +2,10 @@
 <article class="post">
   <header class="post-header">
     <h1>404</h1>
-    <p class="post-subtitle">This page doesn't exist.</p>
+    <p class="post-subtitle">{{ i18n "notFoundTitle" }}</p>
   </header>
   <div class="prose">
-    <p><a href="{{ site.Home.RelPermalink }}">Back to the front page</a></p>
+    <p><a href="{{ site.Home.RelPermalink }}">{{ i18n "backToHome" }}</a></p>
   </div>
 </article>
 {{ end }}

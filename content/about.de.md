@@ -1,0 +1,13 @@
+---
+title: "Über mich"
+description: "Warum es diesen Blog gibt und was dich hier erwartet."
+layout: legal
+build:
+  list: never
+---
+
+Dieser Blog ist der Ort, an dem ich laut denke.
+
+Die meisten Beiträge fallen in eine von zwei Kategorien: Ideen — halbfertige Thesen, die ich zur Diskussion stelle, und Beobachtungen — Muster, die mir in meiner Arbeit als Softwarearchitekt und Berater auffallen. Keiner der beiden erhebt den Anspruch, richtig oder vollständig zu sein. Ich versuche nicht, deine Meinung zu formen; ich versuche, meine eigene zu schärfen, und der schnellste Weg dazu ist, es öffentlich zu tun.
+
+Wenn dich hier etwas anspricht — oder besonders, wenn es das nicht tut — würde ich es gerne hören.

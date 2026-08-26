@@ -1,14 +1,13 @@
 baseURL = "https://obuchmann.dev/"
-languageCode = "en-us"
 title = "obuchmann.dev"
 timeZone = "Europe/Vienna"
 enableRobotsTXT = true
 
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
 [params]
 author = "Oliver Buchmann"
-description = "I write to think — ideas and observations on software architecture, agentic engineering, and how knowledge moves through organizations."
-headline = "Thoughts in progress."
-tagline = "I write to think — about software architecture, agentic engineering, and how knowledge moves through organizations. Nothing here claims to be right; everything here is an invitation to disagree."
 
 # Cookieless hit counting via GoatCounter (https://<code>.goatcounter.com).
 # Only injected in production builds. Empty string disables it.
@@ -31,22 +30,64 @@ unsafe = false
 startLevel = 2
 endLevel = 3
 
-[[menus.main]]
-name = "About"
-pageRef = "/about"
-weight = 5
+[languages]
 
-[[menus.main]]
-name = "Posts"
-pageRef = "/posts"
-weight = 10
+  [languages.en]
+  languageName = "English"
+  languageCode = "en-us"
+  weight = 1
 
-[[menus.main]]
-name = "GitHub"
-url = "https://github.com/obuchmann/obuchmann-dev"
-weight = 30
+    [languages.en.params]
+    description = "I write to think — ideas and observations on software architecture, agentic engineering, and how knowledge moves through organizations."
+    headline = "Thoughts in progress."
+    tagline = "I write to think — about software architecture, agentic engineering, and how knowledge moves through organizations. Nothing here claims to be right; everything here is an invitation to disagree."
 
-[[menus.main]]
-name = "LinkedIn"
-url = "https://www.linkedin.com/in/oliver-buchmann/"
-weight = 40
+    [[languages.en.menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 5
+
+    [[languages.en.menus.main]]
+    name = "Posts"
+    pageRef = "/posts"
+    weight = 10
+
+    [[languages.en.menus.main]]
+    name = "GitHub"
+    url = "https://github.com/obuchmann/obuchmann-dev"
+    weight = 30
+
+    [[languages.en.menus.main]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/oliver-buchmann/"
+    weight = 40
+
+  [languages.de]
+  languageName = "Deutsch"
+  languageCode = "de"
+  weight = 2
+
+    [languages.de.params]
+    description = "Ich schreibe, um zu denken — Ideen und Beobachtungen zu Softwarearchitektur, agentic engineering und wie Wissen sich in Organisationen bewegt."
+    headline = "Gedanken in Arbeit."
+    tagline = "Ich schreibe, um zu denken — über Softwarearchitektur, agentic engineering und wie Wissen sich in Organisationen bewegt. Nichts hier beansprucht, richtig zu sein; alles hier ist eine Einladung zum Widerspruch."
+
+    [[languages.de.menus.main]]
+    name = "Über mich"
+    pageRef = "/about"
+    weight = 5
+
+    [[languages.de.menus.main]]
+    name = "Beiträge"
+    pageRef = "/posts"
+    weight = 10
+
+    [[languages.de.menus.main]]
+    name = "GitHub"
+    url = "https://github.com/obuchmann/obuchmann-dev"
+    weight = 30
+
+    [[languages.de.menus.main]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/oliver-buchmann/"
+    weight = 40
