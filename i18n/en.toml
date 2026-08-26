@@ -8,7 +8,7 @@ other = "{{ .Count }} min read"
 other = "updated"
 
 [disclosure]
-other = "Concept and final editing by me — AI agents were used for research and drafting."
+other = "Concept and final editing by me - AI agents were used for research and drafting."
 
 [notFoundTitle]
 other = "This page doesn't exist."
@@ -74,7 +74,7 @@ other = "Team harness B"
 other = "its own complete harness"
 
 [adrsimDerivedDiff]
-other = "Derived diff — curate it"
+other = "Derived diff - curate it"
 
 [adrsimKeep]
 other = "Keep"
@@ -101,7 +101,7 @@ other = "4· Adopt"
 other = "Reset"
 
 [adrsimFinding1Friction]
-other = "Agent crossed a module boundary — no sensor fired"
+other = "Agent crossed a module boundary - no sensor fired"
 
 [adrsimFinding1Title]
 other = "Add a boundary sensor to pre-commit"
@@ -119,19 +119,19 @@ other = "A flaky integration test sent the agent into a retry loop"
 other = "Quarantine flaky tests before agent runs"
 
 [adrsimIntroCaption]
-other = "A federation round trip: a finding travels from one team's session friction into another team's harness — as a decision, not an artifact. Start with Reflect."
+other = "A federation round trip: a finding travels from one team's session friction into another team's harness - as a decision, not an artifact. Start with Reflect."
 
 [adrsimReflectCaption]
-other = "Session friction lands in the repo's reflection log — it rides to main with the feature PR. At the retro, the forum takes over."
+other = "Session friction lands in the repo's reflection log - it rides to main with the feature PR. At the retro, the forum takes over."
 
 [adrsimConsolidateCaption]
 other = "Human judgment at the forum turns the finding into {{ .adrId }}: what changed, why, with what evidence, under which applicability conditions."
 
 [adrsimPublishCaption]
-other = "{{ .adrId }} is on the exchange. The decision travels, not the artifact — no harness files moved."
+other = "{{ .adrId }} is on the exchange. The decision travels, not the artifact - no harness files moved."
 
 [adrsimAdoptCaption]
-other = "Team B derives its own harness diff from {{ .adrId }} — projection happens at the receiving end, in Team B's context. Now curate: keep, adapt, or discard."
+other = "Team B derives its own harness diff from {{ .adrId }} - projection happens at the receiving end, in Team B's context. Now curate: keep, adapt, or discard."
 
 [adrsimKeepLabel]
 other = "fast-forward"
@@ -143,16 +143,16 @@ other = "Fast-forward: the decision applies cleanly, Team B records the adoption
 other = "trim-merge"
 
 [adrsimAdaptText]
-other = "Trim-merge: Team B adapts the decision locally and records a trim ADR — a deliberate, documented divergence. Loop closed."
+other = "Trim-merge: Team B adapts the decision locally and records a trim ADR - a deliberate, documented divergence. Loop closed."
 
 [adrsimDiscardLabel]
 other = "discarded, documented"
 
 [adrsimDiscardText]
-other = "Discarded — and recorded in Team B's own ADR. Documented divergence is not drift. Loop closed."
+other = "Discarded - and recorded in Team B's own ADR. Documented divergence is not drift. Loop closed."
 
 [adrsimReplayNote]
-other = "All three findings have traveled — reset to replay."
+other = "All three findings have traveled - reset to replay."
 
 [adrsimEvidenceTag]
 other = "evidence: reflection log · applies to: modular monolith"

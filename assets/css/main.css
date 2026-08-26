@@ -1,4 +1,4 @@
-/* obuchmann.dev — minimal, readability-first */
+/* obuchmann.dev - minimal, readability-first */
 
 :root {
   --bg: #ffffff;
@@ -213,7 +213,7 @@ a:hover {
   margin: 0;
 }
 
-/* Prose — the part that matters */
+/* Prose - the part that matters */
 
 .prose h2 {
   font-size: 1.5rem;
