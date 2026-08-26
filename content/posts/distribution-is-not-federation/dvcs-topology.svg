@@ -1,6 +1,6 @@
 <svg width="680" viewBox="0 0 680 500" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>The distributed harness topology</title>
-<desc>Four altitudes: project repos consolidate into a team harness (running in production), teams exchange knowledge pull-based through affinity exchanges curated by lieutenants, and the most-tracked exchange emerges as the blessed tree — the upper rungs marked as pilot.</desc>
+<desc>Four altitudes: project repos consolidate into a team harness (running in production), teams exchange knowledge pull-based through affinity exchanges curated by lieutenants, and the most-tracked exchange emerges as the blessed tree - the upper rungs marked as pilot.</desc>
 <style>
 text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .th{font-size:14px;font-weight:600}
@@ -84,5 +84,5 @@ text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-se
   <text class="th" x="264" y="432" text-anchor="middle" dominant-baseline="central">Project</text>
 </g>
 
-<text class="ts tm" x="340" y="482" text-anchor="middle">solid — running in production · dashed — pilot</text>
+<text class="ts tm" x="340" y="482" text-anchor="middle">solid - running in production · dashed - pilot</text>
 </svg>

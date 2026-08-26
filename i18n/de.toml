@@ -8,7 +8,7 @@ other = "{{ .Count }} Min. Lesezeit"
 other = "aktualisiert"
 
 [disclosure]
-other = "Konzept und redaktionelle Endfassung stammen von mir — für Recherche und Entwurf kamen KI-Agenten zum Einsatz."
+other = "Konzept und redaktionelle Endfassung stammen von mir - für Recherche und Entwurf kamen KI-Agenten zum Einsatz."
 
 [notFoundTitle]
 other = "Diese Seite gibt es nicht."
@@ -74,7 +74,7 @@ other = "Team-Harness B"
 other = "sein eigenes vollständiges Harness"
 
 [adrsimDerivedDiff]
-other = "Abgeleiteter Diff — kuratieren"
+other = "Abgeleiteter Diff - kuratieren"
 
 [adrsimKeep]
 other = "Übernehmen"
@@ -101,7 +101,7 @@ other = "4· Übernehmen"
 other = "Zurücksetzen"
 
 [adrsimFinding1Friction]
-other = "Agent hat eine Modulgrenze überschritten — kein Sensor hat ausgelöst"
+other = "Agent hat eine Modulgrenze überschritten - kein Sensor hat ausgelöst"
 
 [adrsimFinding1Title]
 other = "Boundary-Sensor im Pre-Commit ergänzen"
@@ -119,19 +119,19 @@ other = "Ein flakiger Integrationstest hat den Agenten in eine Retry-Schleife ge
 other = "Flakige Tests vor Agent-Läufen unter Quarantäne stellen"
 
 [adrsimIntroCaption]
-other = "Eine Federation-Runde: ein Finding wandert von der Session-Reibung eines Teams in das Harness eines anderen Teams — als Entscheidung, nicht als Artefakt. Start mit Reflektieren."
+other = "Eine Federation-Runde: ein Finding wandert von der Session-Reibung eines Teams in das Harness eines anderen Teams - als Entscheidung, nicht als Artefakt. Start mit Reflektieren."
 
 [adrsimReflectCaption]
-other = "Session-Reibung landet im Reflexions-Log des Repos — sie reist mit dem Feature-PR nach main. Beim Retro übernimmt das Forum."
+other = "Session-Reibung landet im Reflexions-Log des Repos - sie reist mit dem Feature-PR nach main. Beim Retro übernimmt das Forum."
 
 [adrsimConsolidateCaption]
 other = "Menschliches Urteil im Forum macht aus dem Finding {{ .adrId }}: was sich ändert, warum, mit welcher Evidenz, unter welchen Anwendbarkeitsbedingungen."
 
 [adrsimPublishCaption]
-other = "{{ .adrId }} ist auf dem Exchange. Die Entscheidung reist, nicht das Artefakt — keine Harness-Datei wurde verschoben."
+other = "{{ .adrId }} ist auf dem Exchange. Die Entscheidung reist, nicht das Artefakt - keine Harness-Datei wurde verschoben."
 
 [adrsimAdoptCaption]
-other = "Team B leitet aus {{ .adrId }} seinen eigenen Harness-Diff ab — die Projektion passiert auf Empfängerseite, im Kontext von Team B. Jetzt kuratieren: übernehmen, anpassen oder verwerfen."
+other = "Team B leitet aus {{ .adrId }} seinen eigenen Harness-Diff ab - die Projektion passiert auf Empfängerseite, im Kontext von Team B. Jetzt kuratieren: übernehmen, anpassen oder verwerfen."
 
 [adrsimKeepLabel]
 other = "Fast-Forward"
@@ -143,16 +143,16 @@ other = "Fast-Forward: Die Entscheidung passt sauber, Team B protokolliert die �
 other = "Trim-Merge"
 
 [adrsimAdaptText]
-other = "Trim-Merge: Team B passt die Entscheidung lokal an und protokolliert ein Trim-ADR — eine bewusste, dokumentierte Abweichung. Schleife geschlossen."
+other = "Trim-Merge: Team B passt die Entscheidung lokal an und protokolliert ein Trim-ADR - eine bewusste, dokumentierte Abweichung. Schleife geschlossen."
 
 [adrsimDiscardLabel]
 other = "verworfen, dokumentiert"
 
 [adrsimDiscardText]
-other = "Verworfen — und im eigenen ADR von Team B protokolliert. Dokumentierte Abweichung ist kein Drift. Schleife geschlossen."
+other = "Verworfen - und im eigenen ADR von Team B protokolliert. Dokumentierte Abweichung ist kein Drift. Schleife geschlossen."
 
 [adrsimReplayNote]
-other = "Alle drei Findings sind gewandert — zurücksetzen, um es erneut zu erleben."
+other = "Alle drei Findings sind gewandert - zurücksetzen, um es erneut zu erleben."
 
 [adrsimEvidenceTag]
 other = "Evidenz: Reflexions-Log · gilt für: modularer Monolith"

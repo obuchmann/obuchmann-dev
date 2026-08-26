@@ -89,7 +89,7 @@ text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-se
 <g class="teal">
   <rect x="405" y="180" width="200" height="56" rx="8"/>
   <text class="th" x="505" y="198" text-anchor="middle" dominant-baseline="central">Exchange</text>
-  <text class="ts" x="505" y="216" text-anchor="middle" dominant-baseline="central">ADRs — decisions travel</text>
+  <text class="ts" x="505" y="216" text-anchor="middle" dominant-baseline="central">ADRs - decisions travel</text>
 </g>
 
 <line class="arr" x1="407" y1="274" x2="445" y2="240" marker-start="url(#arrow)" marker-end="url(#arrow)"/>

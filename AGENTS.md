@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Instructions for AI agents working in this repository — the Hugo-based personal blog of Oliver Buchmann (obuchmann.dev). See [README.md](README.md) for build, structure, and deployment details.
+Instructions for AI agents working in this repository - the Hugo-based personal blog of Oliver Buchmann (obuchmann.dev). See [README.md](README.md) for build, structure, and deployment details.
 
 ## Mandatory rules
 
@@ -12,7 +12,7 @@ This is implemented as a fixed part of the post layout: `layouts/_default/single
 
 - NEVER remove this block from the layout.
 - Any redesign or replacement of the single-post template must keep the disclosure.
-- Do not add per-post copies of the notice into the Markdown — the layout already covers it.
+- Do not add per-post copies of the notice into the Markdown - the layout already covers it.
 
 ### 2. Changelog on published posts
 
@@ -23,18 +23,22 @@ Format (established convention, see `content/posts/distribution-is-not-federatio
 ```markdown
 ---
 
-*Changelog — this essay has been revised since publication:*
+*Changelog - this essay has been revised since publication:*
 
-*YYYY-MM-DD — What was changed and why, in one or two sentences.*
+*YYYY-MM-DD - What was changed and why, in one or two sentences.*
 ```
 
 - The changelog section is introduced once (after an `---` separator) and new entries are appended in chronological order.
-- Trivial fixes (typos, broken links) may be summarized, but substantive changes — reworked arguments, new sections, updated sources — must each be named.
+- Trivial fixes (typos, broken links) may be summarized, but substantive changes - reworked arguments, new sections, updated sources - must each be named.
 - Drafts (not yet published) need no changelog; edit freely until release.
 
 ### 3. German translation conventions
 
 The site is bilingual (English default at `/en/`, German at `/de/`; see README.md § Languages). When writing or reviewing German content:
 
-- **Use "Agents" (the English loanword), not "Agenten."** Singular oblique forms still decline normally in German (e.g. "einem Agenten," "der Agent") — it's specifically the word itself that stays English, not German grammar around it.
-- **Avoid direct address (du/Sie) in German site copy Claude authors** — the general pages (About, Privacy, UI strings, disclaimers, and similar site-chrome text, as opposed to essay content itself). Prefer impersonal phrasing: "Dies ist die englische Originalfassung" rather than "du liest hier die englische Originalfassung"; "was hier zu erwarten ist" rather than "was dich hier erwartet."
+- **Use "Agents" (the English loanword), not "Agenten."** Singular oblique forms still decline normally in German (e.g. "einem Agenten," "der Agent") - it's specifically the word itself that stays English, not German grammar around it.
+- **Avoid direct address (du/Sie) in German site copy Claude authors** - the general pages (About, Privacy, UI strings, disclaimers, and similar site-chrome text, as opposed to essay content itself). Prefer impersonal phrasing: "Dies ist die englische Originalfassung" rather than "du liest hier die englische Originalfassung"; "was hier zu erwarten ist" rather than "was dich hier erwartet."
+
+### 4. No em dashes or en dashes
+
+The site font renders em dashes (—) and en dashes (–) far too large, hurting readability. Use a plain hyphen with spaces ("word - word") wherever an em or en dash would otherwise be used, in every language and in any text that ends up on the site (post content, `hugo.toml` strings, `i18n/*.toml`, template/shortcode strings, SVG diagram labels). This is a style rule, not a typo - do not "fix" it back to an em dash.
