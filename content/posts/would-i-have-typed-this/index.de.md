@@ -11,15 +11,15 @@ Es gibt eine Frage, die unangenehm zuverlässig funktioniert: **Würde ich das t
 
 Nicht „stimmt es". Nicht „ist es vollständig". Sondern: Hätte ich mir die Mühe gemacht, jeden einzelnen dieser Sätze zu schreiben?
 
-Bei den meisten AI-Antworten, die wir weiterleiten, ist die Antwort nein. Und zwar nicht knapp.
+Bei den meisten AI-Antworten, die wir weiterleiten, ist die Antwort ein klares Nein.
 
 ### Die Ausführlichkeit ist kein Fehler
 
-Wir beschweren uns seit zwei Jahren über dasselbe: Die AI nimmt Dinge an, weil wir ihr zu wenig Context geben. Zu knapp gefragt, falsch angenommen, unbrauchbare Antwort. Den Fehler kennt inzwischen jeder.
+Wir beschweren uns seit zwei Jahren über dasselbe: Die AI nimmt Dinge an, weil wir ihr zu wenig Context geben. Zu knapp gefragt, falsch angenommen, und die Antwort ist unbrauchbar. Den Fehler kennt inzwischen jeder.
 
-In die andere Richtung passiert genau dasselbe. Dass AI-Antworten zu lang geraten, ist längst Konsens - jeder beschwert sich darüber. Nur gilt es als Stilfrage. Als Context-Problem behandelt es kaum jemand.
+In die andere Richtung passiert es genauso. Dass AI-Antworten zu lang geraten, ist längst Konsens - jeder beschwert sich darüber. Nur gilt es als Stilfrage. Als Context-Problem behandelt es kaum jemand.
 
-Die AI gibt uns sehr viel Context zurück. Das ist keine Marotte. Das Modell braucht seine eigenen Worte, um weiterzuarbeiten; die Ausführlichkeit ist funktional. Sie ist nur an eine Maschine adressiert.
+Die AI gibt uns sehr viel Context zurück. Das Modell braucht seine eigenen Worte, um weiterzuarbeiten; die Ausführlichkeit ist funktional. Sie ist nur an eine Maschine adressiert.
 
 Und dann leiten wir sie unverändert an einen Menschen weiter.
 
@@ -29,11 +29,11 @@ Der Handoff an ein Modell und der Handoff an einen Menschen sind zwei verschiede
 
 Beim Menschen lautet die Frage: Welchen Context braucht diese Person wirklich - und was kann ich annehmen? Sie war im selben Meeting. Sie kennt das System. Sie braucht die drei einleitenden Absätze über Grundlagen nicht.
 
-Das ist keine Formfrage, sondern eine Inhaltsfrage. Es geht nicht um hübschere Darstellung, sondern darum, was übrig bleibt, wenn man das Überflüssige wegnimmt.
+Das ist eine Inhaltsfrage. Am Ende zählt, was übrig bleibt, wenn man das Überflüssige wegnimmt.
 
 ### Das Mittel ist dasselbe
 
-Manche sagen: Dann schreib es eben selbst. Ich bin da weniger streng - Handarbeit ist nicht der Punkt. Wir wissen ja längst, wie man das Problem an der ersten Grenze löst: mehr Context geben. Genau dasselbe Mittel funktioniert an der zweiten.
+Manche sagen: Dann schreib es eben selbst. Ich bin da weniger streng. Hauptsache verdichtet; wer es macht, ist zweitrangig. Wie man das Problem an der ersten Grenze löst, wissen wir ja: mehr Context geben. Genau dasselbe Mittel funktioniert an der zweiten.
 
 Sag der AI, für wen die Antwort ist. Was der Empfänger schon weiß, was du voraussetzen kannst, worauf er wartet, in welcher Form er es bekommt - eine Slack-Nachricht ist kein Report. Nichts davon steht in einem Modell. Das weißt nur du.
 
@@ -43,10 +43,10 @@ Damit schließt sich der Kreis: **Um den zweiten Fehler von der AI beheben zu la
 
 ### Der eigentliche Punkt
 
-Die Recherche, die früher eine Stunde gedauert hat, dauert jetzt zehn Minuten. Der Gewinn ist echt. Die Frage ist nur, wo er landet.
+Die Recherche, die früher eine Stunde gedauert hat, dauert jetzt zehn Minuten. Die Zeitersparnis ist real. Die Frage ist nur, wo sie landet.
 
-Im Normalfall landet er vollständig beim Absender. Er spart fünfzig Minuten und schickt weiter, was er bekommen hat. Der Empfänger zahlt die Differenz - und die ist [inzwischen sogar gemessen](https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity): Wer substanzlosen AI-Output auf den Tisch bekommt, verbringt im Schnitt knapp zwei Stunden damit, ihn brauchbar zu machen. Er liest drei Bildschirmlängen statt fünf Sätzen und sucht sich heraus, was ihn betrifft.
+Im Normalfall landet sie vollständig beim Absender. Er spart fünfzig Minuten und schickt weiter, was er bekommen hat. Der Empfänger zahlt die Differenz - und die ist [inzwischen sogar gemessen](https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity): Wer substanzlosen AI-Output auf den Tisch bekommt, verbringt im Schnitt knapp zwei Stunden damit, ihn brauchbar zu machen. Er liest drei Bildschirmlängen statt fünf Sätzen und sucht sich heraus, was ihn betrifft.
 
-Gib etwas davon zurück. Nicht alles. Zwanzig Minuten reichen meistens.
+Gib etwas davon zurück. Zwanzig Minuten reichen meistens.
 
 **Optimiere nicht deine Zeit, sondern die des Lesers.**
