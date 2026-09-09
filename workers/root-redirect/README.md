@@ -1,8 +1,13 @@
 # root-redirect Worker
 
-Edge-side fallback for the root-path language redirect described in the
-project README ("Root domain and language routing"). Redirects `/` to `/de/`
-or `/en/` based on the `Accept-Language` header. Only used if the Cloudflare
+Edge-side fallback for the language-prefix redirect described in the
+project README ("Root domain and language routing"). Redirects any URL that
+isn't already under `/de` or `/en` (the bare root, and old unprefixed URLs
+such as `/posts/distribution-is-not-federation/` that are still linked from
+elsewhere on the internet) to the same path prefixed with `/de` or `/en`,
+based on the `Accept-Language` header. Static files (anything with an
+extension in the last path segment - favicon, CSS, robots.txt, sitemap.xml,
+RSS feeds, ...) are passed through untouched. Only used if the Cloudflare
 Redirect Rule (the primary mechanism) is not available on the current plan.
 
 ## Local development
