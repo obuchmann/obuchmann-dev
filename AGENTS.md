@@ -42,3 +42,10 @@ The site is bilingual (English default at `/en/`, German at `/de/`; see README.m
 ### 4. No em dashes or en dashes
 
 The site font renders em dashes (—) and en dashes (–) far too large, hurting readability. Use a plain hyphen with spaces ("word - word") wherever an em or en dash would otherwise be used, in every language and in any text that ends up on the site (post content, `hugo.toml` strings, `i18n/*.toml`, template/shortcode strings, SVG diagram labels). This is a style rule, not a typo - do not "fix" it back to an em dash.
+
+### 5. No dots in URL path segments (slugs, section/taxonomy names)
+
+The `workers/root-redirect/` Worker (see its README) decides whether a request is a static file or a page by checking for a `.` in the last path segment - if there's a dot, it passes the request through unprefixed instead of redirecting it to `/de/...` or `/en/...`. A page whose URL segment contains a dot (e.g. a slug like `v1.2-notes` or `my.post`) would silently skip the language redirect and 404 for anyone hitting it without the `/en/`/`/de/` prefix already in the link.
+
+- NEVER put a `.` in a post `slug`, a directory name under `content/`, or a taxonomy/section name that becomes part of the URL path.
+- This does not apply to filenames of page-bundle resources (images, `og-image.*`) - those are actual files and are correctly meant to bypass the redirect.
