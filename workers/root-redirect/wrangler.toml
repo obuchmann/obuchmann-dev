@@ -1,0 +1,14 @@
+name = "obuchmann-dev-root-redirect"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# account_id is intentionally not hardcoded here - it is not secret, but
+# leaving it out lets wrangler pick it up from the CLOUDFLARE_ACCOUNT_ID
+# environment variable (set in CI and locally) so this file has nothing
+# account-specific to keep in sync. See README.md in this directory.
+
+routes = [
+  # No wildcard: this route matches only the exact "/" path, so the Worker
+  # never runs for any other request on the domain.
+  { pattern = "obuchmann.dev/", zone_name = "obuchmann.dev" }
+]
