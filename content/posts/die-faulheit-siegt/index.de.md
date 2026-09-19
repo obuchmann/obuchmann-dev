@@ -1,15 +1,13 @@
 ---
 title: "Die Faulheit siegt"
-subtitle: "Eine wahre Geschichte aus einem Homelab, in fünf Kapiteln erzählt."
+subtitle: "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen."
 date: 2026-09-19
 slug: die-faulheit-siegt
 description: "Eine Erzählung in fünf Kapiteln: aus einem Homelab wird über Jahre hinweg immer mehr Automatisierung - und aus einem Wochenendprojekt etwas, das nie mehr stillsteht. Die Geschichte ist wahr, die Technik darin nur ungefähr."
 tags: [homelab, agentic-engineering, narrative]
 ---
 
-Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen.
-
-## Investition
+## Kapitel 1 - Investition
 
 Nur einen neuen Service im Homelab installieren, ist ja eh schon ein fertiger Container, den muss ich nur starten. Dann noch eine Datenbank dazu, hinter den Reverse Proxy hängen, Zertifikat einbinden, an den lokalen Auth Provider anbinden, damit die ganze Family es nutzen kann, ins Monitoring und einen Link aufs Dashboard. Und schon wieder ist ein ganzer Abend dahin und das Wochenende fast vorbei.
 
@@ -23,7 +21,7 @@ Gesagt, getan: Wenige Tage später stehe ich mit meinem Git-Repository und Ansib
 
 Noch schnell ein Prompt, dann ab ins Bett.
 
-## Delegation
+## Kapitel 2 - Delegation
 
 "Was ist das schon wieder für ein Lärm?", fragt meine Frau sichtlich genervt. Dass dieses Geräusch dem Schutz der sensiblen, teuren Server-Hardware dient, interessiert sie wenig. Also nehme "ich" mich des Problems an und frage meinen Agent, warum der Lüfter der selbst programmierten Lüftersteuerung immer wieder so laut ist, obwohl ich eine ziemlich statische Auslastung meiner Dienste habe. Prompt kommt die Antwort, belegt mit unzähligen Werten aus den Logs der vergangenen Tage und dazu eine neue Version der Steuerungssoftware. Der Haussegen ist gerettet.
 
@@ -41,7 +39,7 @@ Ich muss regelmäßig Token nachkaufen, damit die Factory am Laufen bleibt. Irge
 
 Noch schnell ein Feature in Auftrag geben, dann ab ins Bett.
 
-## Zuständigkeit
+## Kapitel 3 - Zuständigkeit
 
 Die Factory baut Software, der Homelab-Agent verwaltet meine Infrastruktur. Beide Systeme funktionieren für sich schon, und wenn sie überlappen, dann bin ich dazwischen.
 
@@ -53,7 +51,7 @@ Ein Ping-Pong zwischen Software-Schmiede und Infrastruktur. Jeder hat seine Aufg
 
 Noch schnell die Infos weiterleiten, dann ab ins Bett.
 
-## Steuerung
+## Kapitel 4 - Steuerung
 
 Die Factory funktioniert, sie nimmt Fahrt auf, die Richtung stimmt!
 
@@ -63,7 +61,7 @@ Also kommen als Nächstes Kostenmetriken, Statistiken in einem Dashboard, Perfor
 
 Noch schnell ein letzter Blick auf die Metriken, dann ab ins Bett.
 
-## Wettbewerb
+## Kapitel 5 - Wettbewerb
 
 Die Factory läuft.
 
