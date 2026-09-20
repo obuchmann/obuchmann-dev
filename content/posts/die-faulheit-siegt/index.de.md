@@ -92,3 +92,9 @@ Noch schnell schauen ob alles läuft.
 ---
 
 _Das ist meine Geschichte, nicht mein Changelog. Sie ist wahr, die Technik darin ist es nur ungefähr._
+
+---
+
+*Changelog - dieser Beitrag wurde seit der Veröffentlichung überarbeitet:*
+
+*2026-09-20 - Der einleitende Satz "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen." wurde vom separaten Intro-Satz zum Subheading gemacht. Die Kapitelüberschriften wurden mit "Kapitel 1 - " bis "Kapitel 5 - " geprefixt.*
