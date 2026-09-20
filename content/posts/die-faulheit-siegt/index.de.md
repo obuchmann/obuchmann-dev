@@ -15,7 +15,7 @@ Inzwischen plane ich sehr genau, ob und welche Tools ich wirklich im Homelab aus
 
 Wir schreiben das Jahr 2025 und ich habe erst kürzlich, bevor die RAM-Preise komplett durch die Decke gegangen sind, mein Homelab noch um einen Server erweitert. Dieser Server überlastet trotz der noch niedrigen Auslastung meine thermischen Konzepte komplett. Eine Lösung musste her, und dank AI-Brainstorming war auch bald klar, es wird eine Individuallösung. Mein Agent schreibt mir eine Artikelliste, den Bauplan und den Code für meine Lüftersteuerung und dokumentiert das Ganze noch dazu perfekt. Lediglich das Löten und Zusammenstecken obliegt noch mir. Schon ein paar Wochen später baue ich die Steuerung ein zweites Mal nach, komplett auf Basis der Dokumentation. Ich bin begeistert - Hardware, Software, alles kein Problem, denke ich mir.
 
-Das war auch der Anstoß für mein nächstes ambitioniertes Projekt, in der Hoffnung, dass es das letzte Mal ist, dass ich mich so schwerfällig an eine solche Aufgabe mache. Der Plan ist nichts weniger, als das ganze Homelab auf Infrastructure as Code umzustellen und Änderungen primär via AI-Agents vorzunehmen.
+Das war auch der Anstoß für mein nächstes ambitioniertes Projekt, in der Hoffnung, dass es mich zum letzten Mal so viel Überwindung kostet, eine solche Aufgabe zu beginnen. Der Plan ist nichts weniger, als das ganze Homelab auf Infrastructure as Code umzustellen und Änderungen primär via AI-Agents vorzunehmen.
 
 Gesagt, getan: Wenige Tage später stehe ich mit meinem Git-Repository und Ansible an einem Punkt, den ich mir nie zu träumen gewagt habe. Dieses Setup war schon immer mein Ziel, aber ohne AI-Unterstützung lag es in unerreichbarer Ferne. Der Agent schlägt Änderungen vor, ich reviewe und deploye die Konfiguration, wenn sie mir gefällt. Änderungen, die vorher Tage oder Wochen gebraucht haben, gehen innerhalb von Minuten.
 
@@ -43,9 +43,9 @@ Noch schnell ein Feature in Auftrag geben, dann ab ins Bett.
 
 Die Factory baut Software, der Homelab-Agent verwaltet meine Infrastruktur. Beide Systeme funktionieren für sich schon, und wenn sie überlappen, dann bin ich dazwischen.
 
-Die Factory plant, ich übergebe die Anforderungen an den Homelab-Agent und der setzt sie mit eigenen Anpassungen um. Die Dokumentation gebe ich zurück an die Factory. Ich könnte mich in den Ansible-Stack einarbeiten und es selbst machen, aber dafür ist mir der Abend zu schade.
+Die Factory plant Features und braucht dafür Infrastruktur. Ich übergebe die Anforderungen an den Homelab-Agent und der setzt sie mit eigenen Anpassungen um. Die Dokumentation gebe ich zurück an die Factory. Ich könnte mich in den Ansible-Stack einarbeiten und es selbst machen, aber dafür ist mir der Abend zu schade.
 
-Die Factory soll skalieren und das gehört überwacht. Logs müssen gesammelt und zentral zugänglich gemacht werden. Die Factory baut das Logging, der Homelab-Agent stellt die Services zur Log-Aggregation bereit. Den Contract machen sie über mich aus. Ich vermittle und warte ungeduldig auf das Ergebnis auf beiden Seiten.
+Die Factory soll skalieren und gehört trotzdem überwacht. Logs müssen gesammelt und zentral zugänglich gemacht werden. Die Factory baut das Logging, der Homelab-Agent stellt die Services zur Log-Aggregation bereit. Den Contract machen sie über mich aus. Ich vermittle und warte ungeduldig auf das Ergebnis auf beiden Seiten.
 
 Ein Ping-Pong zwischen Software-Schmiede und Infrastruktur. Jeder hat seine Aufgaben und seine Grenzen, dazwischen vermittle ich. Nichts davon habe ich geschrieben.
 
@@ -97,4 +97,4 @@ _Das ist meine Geschichte, nicht mein Changelog. Sie ist wahr, die Technik darin
 
 *Changelog - dieser Beitrag wurde seit der Veröffentlichung überarbeitet:*
 
-*2026-09-20 - Der einleitende Satz "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen." wurde vom separaten Intro-Satz zum Subheading gemacht. Die Kapitelüberschriften wurden mit "Kapitel 1 - " bis "Kapitel 5 - " geprefixt.*
+*2026-09-20 - Der einleitende Satz "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen." wurde vom separaten Intro-Satz zum Subheading gemacht. Die Kapitelüberschriften wurden mit "Kapitel 1 - " bis "Kapitel 5 - " geprefixt. Kleinere Textänderungen in Kapitel 1 und 3.*
