@@ -3,7 +3,7 @@ title: "Die Faulheit siegt"
 subtitle: "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen."
 date: 2026-09-19
 slug: die-faulheit-siegt
-description: "Eine Erzählung in fünf Kapiteln: aus einem Homelab wird über Jahre hinweg immer mehr Automatisierung - und aus einem Wochenendprojekt etwas, das nie mehr stillsteht. Die Geschichte ist wahr, die Technik darin nur ungefähr."
+description: "Eine Erzählung in fünf Kapiteln: ein Homelab wird über Jahre hinweg immer mehr automatisiert - und aus einem Wochenendprojekt etwas, das nie mehr stillsteht."
 tags: [homelab, agentic-engineering, narrative]
 ---
 
