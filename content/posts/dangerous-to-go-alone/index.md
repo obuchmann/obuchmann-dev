@@ -5,7 +5,6 @@ date: 2026-10-05
 slug: dangerous-to-go-alone
 description: "Almost every take on three amigos and AI has the AI take over the amigos. A counter-thesis: the AI doesn't enter other domains alone, it brings in the people who live there - as an invitation, not a gate. A sketch, what breaks, and open questions."
 tags: [agentic-engineering, three-amigos, collaboration]
-draft: true
 ---
 
 ## Heading out alone

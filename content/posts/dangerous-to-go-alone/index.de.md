@@ -5,7 +5,6 @@ date: 2026-10-05
 slug: dangerous-to-go-alone
 description: "Fast alle Ansätze zu Three Amigos und AI lassen die AI die Amigos übernehmen. Eine Gegenthese: Die AI betritt fremde Domänen nicht allein, sondern holt die zuständigen Menschen dazu - als Einladung, nicht als Sperre. Eine Skizze, was dabei bricht, und offene Fragen."
 tags: [agentic-engineering, three-amigos, collaboration]
-draft: true
 ---
 
 ## Wer allein loszieht
