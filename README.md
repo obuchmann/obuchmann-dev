@@ -1,10 +1,10 @@
 # obuchmann.dev
 
-Personal blog of Oliver Buchmann, built with [Hugo](https://gohugo.io/) and a custom minimal theme focused on readability. Deployed to GitHub Pages via GitHub Actions.
+Personal blog of Oliver Buchmann, built with [Hugo](https://gohugo.io/) and a custom minimal theme focused on readability. Served as static assets by a Cloudflare Worker.
 
 ## Local development
 
-Requires Hugo (extended not needed, plain CSS only). The CI pins the version in `.github/workflows/deploy.yml` (`HUGO_VERSION`).
+Requires Hugo (extended not needed, plain CSS only). The deploy build pins the version in `scripts/cf-build.sh` (`HUGO_VERSION`).
 
 ```sh
 hugo server -D        # serve with drafts at http://localhost:1313
@@ -53,24 +53,18 @@ UI strings (nav labels aside - those come from the per-language menu config) liv
 
 With `defaultContentLanguageInSubdir = true`, Hugo has nothing to put at the bare domain root (`obuchmann.dev/`) - every real page lives under `/en/` or `/de/`. Two layers handle that:
 
-1. **Cloudflare Redirect Rule (primary, edge-side).** The domain's DNS is proxied through Cloudflare in front of GitHub Pages. A Redirect Rule on the zone matches requests to `/` and redirects to `/de/` when the visitor's `Accept-Language` indicates German, else `/en/` (English is the fallback when no German is detected). Example rule (Rules → Redirect Rules, dynamic redirect):
-   - **When incoming requests match:** `http.request.uri.path eq "/"`
-   - **Then:** dynamic redirect to `concat("https://obuchmann.dev/", if(http.request.accept_language contains "de", "de/", "en/"))`, status 302
-
-   `http.request.accept_language` requires a plan that exposes that field (Business/Enterprise on some Cloudflare accounts); if it isn't available, use the Worker in `workers/root-redirect/` instead, which reads the `Accept-Language` header and issues the same redirect for the root path and, additionally, for any other URL that isn't already language-prefixed (covering old unprefixed links such as `/posts/distribution-is-not-federation/` that still circulate from before the site went bilingual). See `workers/root-redirect/README.md` for deployment and API token setup.
-2. **Built-in Hugo fallback (safety net, no Cloudflare dependency).** With `defaultContentLanguageInSubdir` enabled, Hugo generates `/index.html` itself: a `noindex`, canonical, `<meta http-equiv="refresh">` redirect straight to `/en/` (the default language). This is what serves the root if the Cloudflare rule isn't active yet, is misconfigured, or the site is reached through a host that bypasses Cloudflare (e.g. the raw GitHub Pages domain) - no custom code needed, and nothing in this repo to keep in sync with the language list.
+1. **Language redirect in the site Worker (primary, edge-side).** The Worker that serves the site (`wrangler.jsonc`, code in `workers/root-redirect/src/index.js`) runs before the static assets on every request. It reads the `Accept-Language` header and redirects `/` to `/de/` when the visitor indicates German, else `/en/` - and does the same for any other URL that isn't already language-prefixed (covering old unprefixed links such as `/posts/distribution-is-not-federation/` that still circulate from before the site went bilingual). Files (anything with a `.` in the last path segment) and prefixed paths are served straight from the Hugo build. See `workers/root-redirect/README.md`.
+2. **Built-in Hugo fallback (safety net, no Cloudflare dependency).** With `defaultContentLanguageInSubdir` enabled, Hugo generates `/index.html` itself: a `noindex`, canonical, `<meta http-equiv="refresh">` redirect straight to `/en/` (the default language). This is what serves the root if the site is ever hosted without the Worker in front - no custom code needed, and nothing in this repo to keep in sync with the language list.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` builds the site with a pinned Hugo version and publishes it via `actions/deploy-pages` on every push to `main`.
+The site is a Cloudflare Worker with static assets, configured in `wrangler.jsonc`:
 
-One-time repository setup for the custom domain:
+- `npx wrangler deploy` runs `build.command` (`scripts/cf-build.sh`: downloads the pinned Hugo release and builds into `./public`), then uploads `./public` plus the Worker script.
+- **Cloudflare Workers Builds** (Worker → Settings → Builds, connected to this GitHub repo) runs exactly that on every push to `main`: build command empty, deploy command `npx wrangler deploy`. No GitHub Actions minutes involved.
+- Manual deploy from any machine: export `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (token scope: see `workers/root-redirect/README.md`), then `npx wrangler deploy`.
 
-1. **Settings → Pages → Build and deployment → Source**: select **GitHub Actions**.
-2. **Settings → Pages → Custom domain**: enter `obuchmann.dev` and enable **Enforce HTTPS** once the certificate is issued.
-3. DNS at the registrar: `A`/`AAAA` records for the apex pointing to GitHub Pages (`185.199.108.153` … `185.199.111.153`, and the corresponding `AAAA` records), optionally `www` as `CNAME` to `obuchmann.github.io`.
-
-The workflow takes its base URL from the Pages configuration (`actions/configure-pages`), so it works before and after the custom domain is active.
+The custom domain `obuchmann.dev` is attached to the Worker as a Custom Domain (Worker → Settings → Domains & Routes). The Worker's `*.workers.dev` URL stays enabled as a preview; since `baseURL` is the production domain, links there point to `obuchmann.dev`.
 
 ## Analytics
 

@@ -1,33 +1,35 @@
 # root-redirect Worker
 
-Edge-side fallback for the language-prefix redirect described in the
-project README ("Root domain and language routing"). Redirects any URL that
-isn't already under `/de` or `/en` (the bare root, and old unprefixed URLs
-such as `/posts/distribution-is-not-federation/` that are still linked from
-elsewhere on the internet) to the same path prefixed with `/de` or `/en`,
-based on the `Accept-Language` header. Static files (anything with an
-extension in the last path segment - favicon, CSS, robots.txt, sitemap.xml,
-RSS feeds, ...) are passed through untouched. Only used if the Cloudflare
-Redirect Rule (the primary mechanism) is not available on the current plan.
+Language-prefix redirect for the site Worker configured in `wrangler.jsonc`
+in the repo root (see the project README, "Root domain and language
+routing"). The Worker runs before the static assets (`run_worker_first`) and
+redirects any URL that isn't already under `/de` or `/en` (the bare root,
+and old unprefixed URLs such as `/posts/distribution-is-not-federation/`
+that are still linked from elsewhere on the internet) to the same path
+prefixed with `/de` or `/en`, based on the `Accept-Language` header. Static
+files (anything with an extension in the last path segment - favicon, CSS,
+robots.txt, sitemap.xml, RSS feeds, ...) and prefixed paths are served from
+the Hugo build via the `ASSETS` binding.
 
 ## Local development
 
+From the repo root:
+
 ```sh
-cd workers/root-redirect
 npx wrangler dev
 ```
 
 ## Deploy
 
+From the repo root (builds the site first, see `scripts/cf-build.sh`):
+
 ```sh
-cd workers/root-redirect
 npx wrangler deploy
 ```
 
 Requires `CLOUDFLARE_API_TOKEN` (and `CLOUDFLARE_ACCOUNT_ID`) in the
-environment - see below. CI deploys automatically via
-`.github/workflows/deploy-worker.yml` on pushes to `main` that touch this
-directory.
+environment - see below. On pushes to `main`, Cloudflare Workers Builds
+deploys automatically.
 
 ## Creating a scoped API token
 

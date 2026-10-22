@@ -1,0 +1,20 @@
+// Cloudflare Worker serving the Hugo build in ./public as static assets.
+// Deployed by Cloudflare Workers Builds on every push to main (deploy
+// command: `npx wrangler deploy`, which runs build.command first).
+{
+  "name": "obuchmann-dev",
+  "main": "workers/root-redirect/src/index.js",
+  "compatibility_date": "2025-06-01",
+  "build": {
+    "command": "bash scripts/cf-build.sh"
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // The language redirect has to see "/" too, which otherwise would be
+    // answered straight from public/index.html without running the Worker.
+    "run_worker_first": true
+  },
+  "workers_dev": true
+}
