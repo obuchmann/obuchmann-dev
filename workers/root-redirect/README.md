@@ -43,9 +43,10 @@ hard isolation between them, put them in separate Cloudflare accounts.
 Steps (Cloudflare dashboard):
 
 1. **My Profile -> API Tokens -> Create Token -> Create Custom Token.**
-2. **Permissions**, add three rows:
+2. **Permissions**, add four rows:
    - `Account` / `Workers Scripts` / `Edit`
    - `Zone` / `Workers Routes` / `Edit`
+   - `Zone` / `DNS` / `Edit` (Custom Domains create their DNS records)
    - `Zone` / `Zone` / `Read` (needed so wrangler can resolve `zone_name` to
      a zone ID)
 3. **Account Resources**: `Include` -> `Specific account` -> select the

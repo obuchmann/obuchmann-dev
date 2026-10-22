@@ -16,5 +16,9 @@
     // answered straight from public/index.html without running the Worker.
     "run_worker_first": true
   },
-  "workers_dev": true
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "obuchmann.dev", "custom_domain": true },
+    { "pattern": "www.obuchmann.dev", "custom_domain": true }
+  ]
 }

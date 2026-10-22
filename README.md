@@ -64,7 +64,7 @@ The site is a Cloudflare Worker with static assets, configured in `wrangler.json
 - **Cloudflare Workers Builds** (Worker → Settings → Builds, connected to this GitHub repo) runs exactly that on every push to `main`: build command empty, deploy command `npx wrangler deploy`. No GitHub Actions minutes involved.
 - Manual deploy from any machine: export `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (token scope: see `workers/root-redirect/README.md`), then `npx wrangler deploy`.
 
-The custom domain `obuchmann.dev` is attached to the Worker as a Custom Domain (Worker → Settings → Domains & Routes). The Worker's `*.workers.dev` URL stays enabled as a preview; since `baseURL` is the production domain, links there point to `obuchmann.dev`.
+`obuchmann.dev` and `www.obuchmann.dev` are attached to the Worker as Custom Domains via `routes` in `wrangler.jsonc`, so every `wrangler deploy` keeps them in place; Cloudflare manages the DNS records for them. The Worker's `*.workers.dev` URL stays enabled as a preview; since `baseURL` is the production domain, links there point to `obuchmann.dev`.
 
 ## Analytics
 
