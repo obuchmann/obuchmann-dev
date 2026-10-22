@@ -8,10 +8,18 @@
 // Static assets and other files (favicon.svg, robots.txt, sitemap.xml, RSS
 // feeds, ...) are left alone since they are not language-prefixed pages, and
 // are served from the Hugo build via the ASSETS binding.
+// Requests to www.obuchmann.dev get a permanent redirect to the same URL on
+// the bare domain first, so the site only lives under one hostname.
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.hostname.startsWith("www.")) {
+      url.hostname = url.hostname.slice(4);
+      return Response.redirect(url.toString(), 301);
+    }
+
     const path = url.pathname;
 
     const lastSegment = path.slice(path.lastIndexOf("/") + 1);

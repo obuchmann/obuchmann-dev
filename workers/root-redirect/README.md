@@ -11,6 +11,10 @@ files (anything with an extension in the last path segment - favicon, CSS,
 robots.txt, sitemap.xml, RSS feeds, ...) and prefixed paths are served from
 the Hugo build via the `ASSETS` binding.
 
+Before that, any request to `www.obuchmann.dev` gets a `301` to the same
+path and query on `obuchmann.dev`, so the site only lives under one
+hostname.
+
 ## Local development
 
 From the repo root:
@@ -29,7 +33,7 @@ npx wrangler deploy
 
 Requires `CLOUDFLARE_API_TOKEN` (and `CLOUDFLARE_ACCOUNT_ID`) in the
 environment - see below. On pushes to `main`, Cloudflare Workers Builds
-deploys automatically.
+deploys automatically (setup: project README, "Deployment").
 
 ## Creating a scoped API token
 
@@ -54,15 +58,12 @@ Steps (Cloudflare dashboard):
 4. **Zone Resources**: `Include` -> `Specific zone` -> `obuchmann.dev`.
 5. Create the token and copy it once - Cloudflare will not show it again.
 
-Store it as a GitHub Actions secret:
+This token is only for deploys from outside Cloudflare - Workers Builds
+uses its own token, created when the build is connected. The account ID is
+on the Cloudflare dashboard overview page for the domain, right-hand
+sidebar.
 
-- Repo **Settings -> Secrets and variables -> Actions -> New repository
-  secret**: name `CLOUDFLARE_API_TOKEN`, value the token from step 5.
-- Same page, add `CLOUDFLARE_ACCOUNT_ID` (can be a plain "variable" instead
-  of a secret, it is not sensitive) - found on the Cloudflare dashboard
-  overview page for the domain, right-hand sidebar.
-
-For local `wrangler dev` / `wrangler deploy`, export the same two values in
+For local `wrangler dev` / `wrangler deploy`, export both values in
 your shell (`export CLOUDFLARE_API_TOKEN=...`,
 `export CLOUDFLARE_ACCOUNT_ID=...`) instead of running `wrangler login`, so
 your local machine uses the same scoped token rather than a full

@@ -61,10 +61,17 @@ With `defaultContentLanguageInSubdir = true`, Hugo has nothing to put at the bar
 The site is a Cloudflare Worker with static assets, configured in `wrangler.jsonc`:
 
 - `npx wrangler deploy` runs `build.command` (`scripts/cf-build.sh`: downloads the pinned Hugo release and builds into `./public`), then uploads `./public` plus the Worker script.
-- **Cloudflare Workers Builds** (Worker → Settings → Builds, connected to this GitHub repo) runs exactly that on every push to `main`: build command empty, deploy command `npx wrangler deploy`. No GitHub Actions minutes involved.
+- **Cloudflare Workers Builds** runs exactly that on every push to `main` - no GitHub Actions minutes involved. One-time setup in the Cloudflare dashboard: Workers & Pages → `obuchmann-dev` → Settings → Builds → Connect, pick the GitHub account and the `obuchmann-dev` repo, then set:
+  - Production branch: `main`
+  - Build command: empty (wrangler runs `build.command` itself)
+  - Deploy command: `npx wrangler deploy`
+  - Root directory: `/`
+  - Non-production branch builds: off (otherwise branch pushes deploy previews with `wrangler versions upload`, which is not needed here)
+
+  The Worker name in the dashboard must match `name` in `wrangler.jsonc`, otherwise the build fails.
 - Manual deploy from any machine: export `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (token scope: see `workers/root-redirect/README.md`), then `npx wrangler deploy`.
 
-`obuchmann.dev` and `www.obuchmann.dev` are attached to the Worker as Custom Domains via `routes` in `wrangler.jsonc`, so every `wrangler deploy` keeps them in place; Cloudflare manages the DNS records for them. The Worker's `*.workers.dev` URL stays enabled as a preview; since `baseURL` is the production domain, links there point to `obuchmann.dev`.
+`obuchmann.dev` and `www.obuchmann.dev` are attached to the Worker as Custom Domains via `routes` in `wrangler.jsonc`, so every `wrangler deploy` keeps them in place; Cloudflare manages the DNS records for them. The Worker redirects `www.obuchmann.dev` permanently to `obuchmann.dev`. The Worker's `*.workers.dev` URL stays enabled as a preview; since `baseURL` is the production domain, links there point to `obuchmann.dev`.
 
 ## Analytics
 
