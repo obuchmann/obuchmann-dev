@@ -91,10 +91,12 @@ Noch schnell schauen ob alles läuft.
 
 ---
 
-_Das ist meine Geschichte, nicht mein Changelog. Sie ist wahr, die Technik darin ist es nur ungefähr._
+_Das ist meine Geschichte, nicht mein Changelog. Sie ist wahr, die Technik darin ist es nur [ungefähr]({{< ref path="/posts/the-factorys-biggest-customer" lang="de" >}})._
 
 ---
 
 *Changelog - dieser Beitrag wurde seit der Veröffentlichung überarbeitet:*
 
 *2026-09-20 - Der einleitende Satz "Der beste Entwickler ist ein fauler Entwickler. Ich habe das ernst genommen." wurde vom separaten Intro-Satz zum Subheading gemacht. Die Kapitelüberschriften wurden mit "Kapitel 1 - " bis "Kapitel 5 - " geprefixt. Kleinere Textänderungen in Kapitel 1 und 3.*
+
+*2026-10-22 - In der Schlussnotiz verlinkt "ungefähr" jetzt auf den Feldbericht "Der größte Kunde der Factory", der die Technik hinter dieser Geschichte mit Zahlen nachliefert.*
