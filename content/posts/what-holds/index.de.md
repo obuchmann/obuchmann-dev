@@ -1,5 +1,5 @@
 ---
-title: "Was hält"
+title: "Was gehalten hat"
 subtitle: "Fünf Wochen Factory im Bild: das Setup, die Reihenfolge, in der es entsteht, und was davon heute noch läuft. In der Factory gilt: Alles, was hält, ist eine Grenze."
 date: 2026-11-22
 slug: what-holds
