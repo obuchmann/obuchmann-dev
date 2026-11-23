@@ -1,6 +1,6 @@
 ---
-title: "What Holds"
-subtitle: "Five weeks of the factory in pictures: the setup, the order in which it comes together, and what still runs today. In the factory, everything that holds is a boundary."
+title: "What Held"
+subtitle: "Five weeks of the factory in pictures: the setup, the order in which it comes together, and what still runs today. Everything that held was a boundary."
 date: 2026-11-22
 slug: what-holds
 description: "A technical retrospective in pictures: the setup of a home-built AI factory, the order in which it comes together, and what is worth taking from it."
